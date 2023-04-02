@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import classes from "./Sorting.module.css";
 import CustomSelect from "../select/CustomSelect";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
@@ -14,6 +14,10 @@ const Sorting: FC = () => {
     ];
     const { filtered_products } = useTypedSelector((state) => state.filter);
     const { setFilteredProducts } = useActions();
+    const [sortType, setSortType] = useState(options[0].value);
+    useEffect(() => {
+        sortProducts();
+    }, [filtered_products]);
 
     const sortByName = (
         products: Product[],
@@ -47,8 +51,8 @@ const Sorting: FC = () => {
         return sorted;
     };
 
-    const sortProducts = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const [sortBy, order] = event.currentTarget.value.split("_");
+    const sortProducts = () => {
+        const [sortBy, order] = sortType.split("_");
         const sortResults = [1, 0, -1];
         if (order === "decrease") {
             sortResults.reverse();
@@ -64,10 +68,14 @@ const Sorting: FC = () => {
         }
         setFilteredProducts(sortedProducts);
     };
+    const onClick = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setSortType(event.currentTarget.value);
+        sortProducts();
+    };
     return (
         <div className={classes.container}>
             <span className={classes.name}>Сортировка: </span>
-            <CustomSelect options={options} onChange={sortProducts} />
+            <CustomSelect options={options} onChange={onClick} />
         </div>
     );
 };

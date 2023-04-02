@@ -66,8 +66,7 @@ const Footer: FC = () => {
             />
             {width > breakpoint ? (
                 <div className={classes["prices-container"]}>
-                    (<h2 className={classes.title}>Скачать прайс-лист:</h2>
-                    )
+                    <h2 className={classes.title}>Скачать прайс-лист:</h2>
                     <CustomButton
                         text="Прайс-лист"
                         icon={downloadIcon}

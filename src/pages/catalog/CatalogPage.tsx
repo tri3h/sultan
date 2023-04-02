@@ -26,7 +26,6 @@ const CatalogPage: FC = () => {
         </li>
     ));
     const {
-        filtered_products,
         producer_search,
         producer_checkboxes,
         care_type_checkboxes,
