@@ -81,4 +81,54 @@
         opacity: 0.1;
         border: 1px dashed var(--color-fiord);
     }
+
+    .mobile-top {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .mobile-call-container {
+        display: flex;
+        flex-direction: row;
+        gap: 7px;
+    }
+
+    .mobile-bottom {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        align-items: flex-start;
+    }
+
+    .mobile-text {
+        font-family: var(--font-inter);
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 150%;
+        color: var(--color-fiord);
+    }
+
+    .mobile-call {
+        font-family: var(--font-inter);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 150%;
+        text-decoration-line: underline;
+        color: var(--color-fiord);
+    }
+
+    .mobile-title {
+        font-family: var(--font-inter);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 150%;
+        color: var(--color-fiord);
+    }
 }

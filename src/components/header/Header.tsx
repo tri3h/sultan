@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import classes from "./Header.module.css";
 
 import CustomButton from "../button/CustomButton";
@@ -12,6 +12,9 @@ import frameIcon from "../../assets/img/svg/frame.svg";
 import frameEmptyIcon from "../../assets/img/svg/frame-empty.svg";
 import searchEmptyIcon from "../../assets/img/svg/search-empty.svg";
 import searchIcon from "../../assets/img/svg/search.svg";
+import closeIcon from "../../assets/img/svg/close.svg";
+import phoneIcon from "../../assets/img/svg/phone.svg";
+import phoneEmptyIcon from "../../assets/img/svg/phone-empty.svg";
 import listIcon from "../../assets/img/svg/list.svg";
 import logo from "../../assets/img/svg/logo.svg";
 import consultantPic from "../../assets/img/consultant.png";
@@ -24,10 +27,21 @@ import { useViewport } from "../../hooks/useViewport";
 const Header: FC = () => {
     const { width } = useViewport();
     const breakpoint = 992;
+    const [isHeaderOpen, setIsHeaderOpen] = useState(false);
+    const openHeader = () => {
+        setIsHeaderOpen(true);
+    };
+    const closeHeader = () => {
+        setIsHeaderOpen(false);
+    };
     const mobileHeader = (
         <header className={classes.header}>
             <div className={classes.top}>
-                <img src={listIcon} width={50} />
+                {isHeaderOpen ? (
+                    <img src={closeIcon} width={50} onClick={closeHeader} />
+                ) : (
+                    <img src={listIcon} width={50} onClick={openHeader} />
+                )}
                 <img src={logo} />
                 <Cart></Cart>
             </div>
@@ -48,6 +62,55 @@ const Header: FC = () => {
                     <p className={classes.text}>Поиск</p>
                 </div>
             </div>
+            {isHeaderOpen ? (
+                <div>
+                    <div className={classes["mobile-top"]}>
+                        <Contacts
+                            color={ColorTypes.DARK}
+                            icon={locationIcon}
+                            text="г. Кокчетав, ул. Ж. Ташенова 129Б"
+                            subtext="(Рынок Восточный)"
+                        />
+                        <Contacts
+                            color={ColorTypes.DARK}
+                            icon={mailIcon}
+                            text="opt.sultan@mail.ru "
+                            subtext="На связи в любое время"
+                        />
+                        <Contacts
+                            color={ColorTypes.DARK}
+                            icon={phoneEmptyIcon}
+                            text="Отдел продаж"
+                            subtext="+7 (777) 490-00-91"
+                        />
+                        <p className={classes["mobile-text"]}>
+                            время работы: 9:00-20:00
+                        </p>
+                        <div className={classes["mobile-call-container"]}>
+                            <img src={phoneIcon} />
+                            <p className={classes["mobile-call"]}>
+                                Заказать звонок
+                            </p>
+                        </div>
+                    </div>
+                    <div className={classes["mobile-bottom"]}>
+                        <p className={classes["mobile-title"]}>Меню сайта:</p>
+                        <NavbarShort
+                            items={[
+                                "О компании",
+                                "Доставка и оплата",
+                                "Возврат",
+                                "Контакты",
+                            ]}
+                        />
+                        <CustomButton
+                            text="Прайс-лист"
+                            icon={downloadIcon}
+                            isSmall={false}
+                        />
+                    </div>
+                </div>
+            ) : null}
         </header>
     );
     const desktopHeader = (
