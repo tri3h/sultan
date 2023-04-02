@@ -1,0 +1,12 @@
+.label {
+    font-family: var(--font-inter);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-fiord);
+}
+
+.input {
+    margin-right: 10px;
+}

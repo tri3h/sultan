@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.button {
+    font-family: var(--font-inter);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: var(--color-fiord);
+    background: linear-gradient(
+        90deg,
+        var(--color-golden-tainoi-30) 0%,
+        var(--color-goldenrod-30) 97.25%
+    );
+    border-radius: 1000px;
+    padding: 4px 14px;
+}
+
+.button:hover {
+    background: linear-gradient(
+        90deg,
+        var(--color-golden-tainoi) 0%,
+        var(--color-goldenrod) 97.25%
+    );
+}
+
+.count {
+    font-family: var(--font-inter);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--color-fiord);
+}

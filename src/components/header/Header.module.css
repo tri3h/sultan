@@ -1,0 +1,84 @@
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--color-black-squeeze-20);
+    padding: 14px 277px;
+}
+
+.contacts-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--color-black-squeeze-20);
+    padding: 12px 277px;
+}
+
+.input-container {
+    width: 263px;
+}
+
+@media (max-width: 1800px) {
+    .top {
+        padding: 14px 50px;
+    }
+
+    .bottom {
+        padding: 14px 50px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .top {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .bottom {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 992px) {
+    .top {
+        justify-content: space-between;
+        padding: 15px;
+    }
+
+    .bottom {
+        padding: 15px;
+        justify-content: space-evenly;
+    }
+
+    .mobile-button {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .text {
+        font-family: var(--font-inter);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        color: var(--color-fiord);
+    }
+
+    .delimiter {
+        width: 1px;
+        height: 30px;
+        opacity: 0.1;
+        border: 1px dashed var(--color-fiord);
+    }
+}

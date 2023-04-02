@@ -1,0 +1,21 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.item {
+    border-top: 1px dashed var(--color-fiord-30);
+    padding-top: 50px;
+}
+
+.item_last {
+    border-bottom: 1px dashed var(--color-fiord-30);
+    padding-bottom: 50px;
+}
+
+@media (max-width: 992px) {
+    .list {
+        gap: 20px;
+    }
+}

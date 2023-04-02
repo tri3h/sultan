@@ -1,0 +1,28 @@
+.list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.item {
+    font-family: var(--font-inter);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 120%;
+    color: var(--color-fiord);
+    padding-right: 10px;
+    border-right: 1px dashed var(--color-fiord-30);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.item:hover {
+    color: var(--color-golden-tainoi);
+}
+
+.item_picked {
+    opacity: 0.5;
+    padding-right: 0;
+    border: none;
+}

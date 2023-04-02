@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    font-family: var(--font-inter);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.text_dark {
+    color: var(--color-cod-gray);
+}
+
+.text_light {
+    color: var(--color-white);
+}
+
+.subtext {
+    font-family: var(--font-inter);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 130.02%;
+}

@@ -1,0 +1,16 @@
+.select {
+    appearance: none;
+    background: url("../../assets/img/svg/sorting-arrow-down.svg") no-repeat
+        100% 50%;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+.text {
+    font-family: var(--font-inter);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--color-fiord);
+}

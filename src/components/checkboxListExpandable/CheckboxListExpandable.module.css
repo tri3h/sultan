@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.show {
+    cursor: pointer;
+    font-family: var(--font-inter);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--color-fiord);
+    background: url("../../assets/img/svg/sorting-arrow-down.svg") no-repeat
+        85px 5px;
+    padding-right: 15px;
+}
+
+.label {
+    font-family: var(--font-inter);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-fiord);
+}
+
+.input {
+    margin-right: 10px;
+}
+
+.count {
+    font-size: 10px;
+}
