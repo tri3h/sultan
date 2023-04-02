@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sultan/static/css/main.44f3a472.css",
-    "main.js": "/sultan/static/js/main.90adab58.js",
+    "main.css": "/sultan/static/css/main.c5bdfbca.css",
+    "main.js": "/sultan/static/js/main.e5fe793a.js",
     "static/media/organic-zone_nourishing-mask.png": "/sultan/static/media/organic-zone_nourishing-mask.2961c8ebb5d9ad0e1877.png",
     "static/media/biomio_soap.png": "/sultan/static/media/biomio_soap.aa7e831e6a4ff6804990.png",
     "static/media/persil_deep-clean-plus.jpeg": "/sultan/static/media/persil_deep-clean-plus.d42714b6ac299b4627be.jpeg",
@@ -42,9 +42,11 @@
     "static/media/share.svg": "/sultan/static/media/share.c7ea557134a8977c1abbf2213e507dea.svg",
     "static/media/cancel.svg": "/sultan/static/media/cancel.ba6fc45b1c4861388bc548a5aac3811e.svg",
     "static/media/mail.svg": "/sultan/static/media/mail.3e3846c4f8765fe5313a394940923dde.svg",
+    "static/media/phone.svg": "/sultan/static/media/phone.c49392ca5fdeac4295c87acadd93f299.svg",
     "static/media/bottle.svg": "/sultan/static/media/bottle.8954951c94a03caba659a0160febe828.svg",
     "static/media/box.svg": "/sultan/static/media/box.3daf02ca5bcf43434fd3c21fedf830c9.svg",
     "static/media/telegram.svg": "/sultan/static/media/telegram.f12022d10149138d9186f6ea7fca16bb.svg",
+    "static/media/phone-empty.svg": "/sultan/static/media/phone-empty.e74ed3e8a20e93f90d9ea5afd4f2e047.svg",
     "static/media/location.svg": "/sultan/static/media/location.ac8d5a925aa65f28f8c1f78a97674963.svg",
     "static/media/frame-empty.svg": "/sultan/static/media/frame-empty.1928cbd9b07950bf3fa58978c02fd5d0.svg",
     "static/media/frame.svg": "/sultan/static/media/frame.4756189f8fb2f4cdf0b38c581c7033d8.svg",
@@ -52,6 +54,7 @@
     "static/media/search-empty.svg": "/sultan/static/media/search-empty.2e7579ec4d7e4d74ea02293861076152.svg",
     "static/media/ok.svg": "/sultan/static/media/ok.8db53738ab6acac6c1ebf02c16900b34.svg",
     "index.html": "/sultan/index.html",
+    "static/media/close.svg": "/sultan/static/media/close.ac657e28a94f2179955226ef046ee9b5.svg",
     "static/media/list.svg": "/sultan/static/media/list.eace4fcf43be850b4512ee6f54854124.svg",
     "static/media/download-black.svg": "/sultan/static/media/download-black.11d3238f37bdb4da06fd293c2ccf77e4.svg",
     "static/media/download.svg": "/sultan/static/media/download.5e96ff0389bda2c469106116f0a58afd.svg",
@@ -60,11 +63,11 @@
     "static/media/arrow-right.svg": "/sultan/static/media/arrow-right.93ba4abe5846a231d455ec0417dd0a4b.svg",
     "static/media/sorting-arrow-down.svg": "/sultan/static/media/sorting-arrow-down.260e242d67fc23d29ab0.svg",
     "static/media/sorting-arrow-up.svg": "/sultan/static/media/sorting-arrow-up.5e5d30daddeae7614a94f9346edb1e23.svg",
-    "main.44f3a472.css.map": "/sultan/static/css/main.44f3a472.css.map",
-    "main.90adab58.js.map": "/sultan/static/js/main.90adab58.js.map"
+    "main.c5bdfbca.css.map": "/sultan/static/css/main.c5bdfbca.css.map",
+    "main.e5fe793a.js.map": "/sultan/static/js/main.e5fe793a.js.map"
   },
   "entrypoints": [
-    "static/css/main.44f3a472.css",
-    "static/js/main.90adab58.js"
+    "static/css/main.c5bdfbca.css",
+    "static/js/main.e5fe793a.js"
   ]
 }
