@@ -23,6 +23,7 @@ import mailIcon from "../../assets/img/svg/mail.svg";
 import NavbarShort from "../navbar/NavbarShort";
 import { ColorTypes } from "../../types/types";
 import { useViewport } from "../../hooks/useViewport";
+import { Link } from "react-router-dom";
 
 const Header: FC = () => {
     const { width } = useViewport();
@@ -138,6 +139,9 @@ const Header: FC = () => {
                         "Контакты",
                     ]}
                 />
+                <Link className={classes["to-admin"]} to={"/admin"}>
+                    На страницу админа
+                </Link>
             </div>
             <div className={classes.bottom}>
                 <img src={logo} />

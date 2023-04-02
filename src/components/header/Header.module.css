@@ -26,6 +26,15 @@
     width: 263px;
 }
 
+.to-admin {
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.to-admin:hover {
+    color: blue;
+}
+
 @media (max-width: 1800px) {
     .top {
         padding: 14px 50px;
