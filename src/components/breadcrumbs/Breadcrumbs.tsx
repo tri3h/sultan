@@ -2,13 +2,13 @@ import { FC } from "react";
 import classes from "./Breadcrumbs.module.sass";
 import { Link } from "react-router-dom";
 
-interface Link {
+interface BreadcrumbsLink {
     name: string;
     url: string;
 }
 
 interface BreadcrumbsProps {
-    links: Link[];
+    links: BreadcrumbsLink[];
 }
 
 const Breadcrumbs: FC<BreadcrumbsProps> = ({ links }) => {

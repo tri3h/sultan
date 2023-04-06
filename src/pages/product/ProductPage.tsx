@@ -67,7 +67,11 @@ const ProductPage: FC = () => {
             <main className={classes.main}>
                 <Breadcrumbs links={breadcrumbs} />
                 <div className={classes["product-container"]}>
-                    <img src={image} className={classes.img} />
+                    <img
+                        src={image}
+                        className={classes.img}
+                        alt={product.name}
+                    />
                     <div className={classes.info}>
                         <p className={classes["having-text"]}>В наличии</p>
                         <h1 className={classes.title}>{product.name}</h1>
@@ -84,14 +88,14 @@ const ProductPage: FC = () => {
                             <Counter product={product} />
                             <CustomButton
                                 text={"В корзину"}
-                                icon={cartIcon}
+                                icon={{ src: cartIcon, alt: "cart" }}
                                 isSmall={false}
                                 onClick={onCartClick}
                             />
                         </div>
                         <ul className={classes["share"]}>
                             <li className={classes["share__item"]}>
-                                <img src={shareIcon} />
+                                <img src={shareIcon} alt="share" />
                             </li>
                             <li className={classes["share__item"]}>
                                 <p className={classes["share__text"]}>
@@ -114,7 +118,7 @@ const ProductPage: FC = () => {
                                 >
                                     Прайс-лист
                                 </p>
-                                <img src={downloadIcon} />
+                                <img src={downloadIcon} alt="download" />
                             </li>
                         </ul>
                         <div className={classes.features}>
@@ -135,6 +139,7 @@ const ProductPage: FC = () => {
                                           ].join(" ")
                                 }
                                 src={arrowIcon}
+                                alt="arrow"
                             />
                         </div>
                         {isDescrShown ? (
@@ -158,6 +163,7 @@ const ProductPage: FC = () => {
                                           ].join(" ")
                                 }
                                 src={arrowIcon}
+                                alt="arrow"
                             />
                         </div>
                         {isCharactShown ? (

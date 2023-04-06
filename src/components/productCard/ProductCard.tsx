@@ -14,7 +14,6 @@ import {
     getProductSizeType,
 } from "../../utils/utils";
 
-
 interface ProductCardProps {
     product: Product;
 }
@@ -35,7 +34,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
     const image = getImageByName(product.pic);
     return (
         <div className={classes.container}>
-            <img className={classes.img} src={image} />
+            <img className={classes.img} src={image} alt={product.name} />
             <div className={classes.size}>
                 <Size {...{ type: type, size: product.size }} />
             </div>
@@ -49,7 +48,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
                 <p className={classes.price}>{`${product.price} ₸`}</p>
                 <CustomButton
                     text={"В корзину"}
-                    icon={cartIcon}
+                    icon={{ src: cartIcon, alt: "cart" }}
                     isSmall={true}
                     onClick={onCartClick}
                 />

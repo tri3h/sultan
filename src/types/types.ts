@@ -29,3 +29,8 @@ export enum LOCAL_STORAGE_DATA {
     CARE_TYPES = "care_types",
     PRODUCTS = "products",
 }
+
+export interface Img {
+    src: string;
+    alt: string;
+}

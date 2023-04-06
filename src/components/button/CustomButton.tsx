@@ -1,9 +1,10 @@
 import { FC } from "react";
 import classes from "./CustomButton.module.sass";
+import { Img } from "../../types/types";
 
 interface CustomButtonProps {
     text: string;
-    icon?: string;
+    icon?: Img;
     isSmall?: boolean;
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
@@ -30,7 +31,7 @@ const CustomButton: FC<CustomButtonProps> = ({
             >
                 {text}
             </span>
-            {icon ? <img src={icon} /> : null}
+            {icon ? <img src={icon.src} alt={icon.alt} /> : null}
         </button>
     );
 };

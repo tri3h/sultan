@@ -1,13 +1,13 @@
 import { FC } from "react";
 import classes from "./Consultant.module.sass";
-import { Color, ColorTypes } from "../../types/types";
+import { Color, ColorTypes, Img } from "../../types/types";
 
 interface ConsultantProps {
-    pic?: string;
+    img?: Img;
     color: Color;
 }
 
-const Consultant: FC<ConsultantProps> = ({ pic, color }) => {
+const Consultant: FC<ConsultantProps> = ({ img, color }) => {
     const colorText =
         color === ColorTypes.DARK
             ? classes["text_dark"]
@@ -26,9 +26,9 @@ const Consultant: FC<ConsultantProps> = ({ pic, color }) => {
                     Заказать звонок
                 </span>
             </div>
-            {pic && (
-                <div className={classes.pic}>
-                    <img src={pic} />
+            {img && (
+                <div className={classes.img}>
+                    <img src={img.src} alt={img.alt} />
                 </div>
             )}
         </div>

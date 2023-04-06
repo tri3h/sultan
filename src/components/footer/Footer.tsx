@@ -23,11 +23,11 @@ const Footer: FC = () => {
     return (
         <footer className={classes.footer}>
             <div className={classes["subscription-container"]}>
-                <img className={classes.img} src={logo} />
+                <img className={classes.img} src={logo} alt="logo" />
                 {width < breakpoint ? (
                     <CustomButton
                         text="Прайс-лист"
-                        icon={downloadIcon}
+                        icon={{ src: downloadIcon, alt: "download" }}
                         isSmall={false}
                     />
                 ) : null}
@@ -41,7 +41,7 @@ const Footer: FC = () => {
                 <div className={classes.email}>
                     <CustomInput
                         placeholder="Введите ваш E-mail"
-                        icon={arrowRight}
+                        icon={{ src: arrowRight, alt: "arrow-right" }}
                     />
                 </div>
             </div>
@@ -69,13 +69,21 @@ const Footer: FC = () => {
                     <h2 className={classes.title}>Скачать прайс-лист:</h2>
                     <CustomButton
                         text="Прайс-лист"
-                        icon={downloadIcon}
+                        icon={{ src: downloadIcon, alt: "download" }}
                         isSmall={false}
                     />
                     <p className={classes.text}>Связь в мессенджерах:</p>
                     <div className={classes["icon-container"]}>
-                        <img className={classes.icon} src={whatsUpIcon} />
-                        <img className={classes.icon} src={telegramIcon} />
+                        <img
+                            className={classes.icon}
+                            src={whatsUpIcon}
+                            alt="whatsup"
+                        />
+                        <img
+                            className={classes.icon}
+                            src={telegramIcon}
+                            alt="telegram"
+                        />
                     </div>
                 </div>
             ) : null}
@@ -89,16 +97,32 @@ const Footer: FC = () => {
                         subtext="На связи в любое время"
                     />
                     <div className={classes["icon-container"]}>
-                        <img className={classes.icon} src={visaIcon} />
-                        <img className={classes.icon} src={mastercardIcon} />
+                        <img
+                            className={classes.icon}
+                            src={visaIcon}
+                            alt="visa"
+                        />
+                        <img
+                            className={classes.icon}
+                            src={mastercardIcon}
+                            alt="mastercard"
+                        />
                     </div>
                 </div>
                 {width < breakpoint ? (
                     <div className={classes["messenger-container"]}>
                         <p className={classes.text}>Связь в мессенджерах:</p>
                         <div className={classes["icon-container"]}>
-                            <img className={classes.icon} src={whatsUpIcon} />
-                            <img className={classes.icon} src={telegramIcon} />
+                            <img
+                                className={classes.icon}
+                                src={whatsUpIcon}
+                                alt="whatsup"
+                            />
+                            <img
+                                className={classes.icon}
+                                src={telegramIcon}
+                                alt="telegram"
+                            />
                         </div>
                     </div>
                 ) : null}

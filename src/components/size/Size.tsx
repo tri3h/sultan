@@ -12,8 +12,8 @@ export interface SizeProps {
 }
 
 const Size: FC<SizeProps> = ({ type, size }) => {
-    const volume = <img src={bottleIcon} />;
-    const weight = <img src={boxIcon} />;
+    const volume = <img src={bottleIcon} alt="bottle" />;
+    const weight = <img src={boxIcon} alt="box" />;
     const icon = type === ProductSizeTypes.VOLUME ? volume : weight;
 
     return (

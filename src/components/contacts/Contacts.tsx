@@ -1,9 +1,9 @@
 import { FC } from "react";
 import classes from "./Contacts.module.sass";
-import { Color, ColorTypes } from "../../types/types";
+import { Color, ColorTypes, Img } from "../../types/types";
 
 interface ContactsProps {
-    icon?: string;
+    icon?: Img;
     text: string;
     subtext: string;
     color: Color;
@@ -16,7 +16,7 @@ const Contacts: FC<ContactsProps> = ({ icon, text, subtext, color }) => {
             : classes["text_light"];
     return (
         <div className={classes.container}>
-            {icon && <img src={icon} />}
+            {icon && <img src={icon.src} alt={icon.alt} />}
             <div className={classes["text-container"]}>
                 <span className={[classes.text, colorText].join(" ")}>
                     {text}

@@ -4,11 +4,12 @@ import cartIcon from "../../assets/img/svg/cart.svg";
 import { useNavigate } from "react-router-dom";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useViewport } from "../../hooks/useViewport";
+import { RouteNames } from "../../routes";
 
 const Cart: FC = () => {
     const navigate = useNavigate();
     const toCartPage = () => {
-        navigate("/cart");
+        navigate(RouteNames.CART);
     };
     const { width } = useViewport();
     const breakpoint = 992;
@@ -31,8 +32,8 @@ const Cart: FC = () => {
     return (
         <div className={classes.container} onClick={toCartPage}>
             <div className={classes["pic-container"]}>
-                <span className={classes["pic-counter"]}>{count}</span>
-                <img src={cartIcon} />
+                <span className={classes.counter}>{count}</span>
+                <img src={cartIcon} alt="cart" />
             </div>
             {width > breakpoint ? (
                 <div className={classes["text-container"]}>

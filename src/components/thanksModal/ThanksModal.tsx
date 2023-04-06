@@ -17,10 +17,11 @@ const ThanksModal: FC<ThanksModalProps> = ({ close }) => {
                     <img
                         className={classes.close}
                         src={cancelIcon}
+                        alt="cancel"
                         onClick={close}
                     />
                     <div className={classes.message}>
-                        <img src={okIcon} />
+                        <img src={okIcon} alt="ok" />
                         <p className={classes.title}>Спасибо за заказ</p>
                         <p className={classes.text}>
                             Наш менеджер свяжется с вами в ближайшее время

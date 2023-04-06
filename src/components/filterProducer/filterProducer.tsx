@@ -52,7 +52,7 @@ const FilterProducer: FC = () => {
             <div className={classes.search}>
                 <CustomInput
                     placeholder="Поиск..."
-                    icon={searchIcon}
+                    icon={{ src: searchIcon, alt: "search" }}
                     onChange={onInputChange}
                 />
             </div>

@@ -31,7 +31,7 @@ const AdminPage: FC = () => {
     const deleteProduct = () => {
         const barcode = editingDefaultValues.barcode;
         const newProducts = products.filter(
-            (product) => product.barcode != barcode
+            (product) => product.barcode !== barcode
         );
         localStorage.setItem(
             LOCAL_STORAGE_DATA.PRODUCTS,
@@ -73,12 +73,12 @@ const AdminPage: FC = () => {
         setCareTypeChanged(event.currentTarget.value);
     };
     const saveCareType = () => {
-        let newTypes = types.filter((type) => type != careTypeSelected);
+        let newTypes = types.filter((type) => type !== careTypeSelected);
         newTypes.push(careTypeChanged);
         let newProducts = products.map((product) => {
             let changedTypes = product.care_type.split(", ");
             changedTypes = changedTypes.filter(
-                (type) => type != careTypeSelected
+                (type) => type !== careTypeSelected
             );
             changedTypes.push(careTypeChanged);
             let result = changedTypes.join(", ");
@@ -101,7 +101,7 @@ const AdminPage: FC = () => {
         );
     };
     const editProduct = (product: Product) => {
-        let newProducts = products.filter((p) => p.barcode != product.barcode);
+        let newProducts = products.filter((p) => p.barcode !== product.barcode);
         newProducts.push(product);
         localStorage.setItem(
             LOCAL_STORAGE_DATA.PRODUCTS,

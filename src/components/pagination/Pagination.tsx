@@ -32,12 +32,14 @@ const Pagination: FC = () => {
         <div className={classes.container}>
             <img
                 src={arrowLeft}
+                alt="arrow-left"
                 className={classes.arrow}
                 onClick={() => setProductPage(page - 1 < 1 ? page : page - 1)}
             />
             <ul className={classes.list}>{lis}</ul>
             <img
                 src={arrowRight}
+                alt="arrow-right"
                 className={classes.arrow}
                 onClick={() =>
                     setProductPage(page + 1 > totalPages ? page : page + 1)

@@ -39,11 +39,21 @@ const Header: FC = () => {
         <header className={classes.header}>
             <div className={classes.top}>
                 {isHeaderOpen ? (
-                    <img src={closeIcon} width={50} onClick={closeHeader} />
+                    <img
+                        src={closeIcon}
+                        alt="close"
+                        width={50}
+                        onClick={closeHeader}
+                    />
                 ) : (
-                    <img src={listIcon} width={50} onClick={openHeader} />
+                    <img
+                        src={listIcon}
+                        alt="open"
+                        width={50}
+                        onClick={openHeader}
+                    />
                 )}
-                <img src={logo} />
+                <img src={logo} alt="logo" />
                 <Cart></Cart>
             </div>
             <div className={classes.bottom}>
@@ -51,6 +61,7 @@ const Header: FC = () => {
                     <img
                         className={classes["frame-icon"]}
                         src={frameEmptyIcon}
+                        alt="frame"
                     />
                     <p className={classes.text}>Каталог</p>
                 </div>
@@ -59,6 +70,7 @@ const Header: FC = () => {
                     <img
                         className={classes["search-icon"]}
                         src={searchEmptyIcon}
+                        alt="search"
                     />
                     <p className={classes.text}>Поиск</p>
                 </div>
@@ -68,19 +80,19 @@ const Header: FC = () => {
                     <div className={classes["mobile-top"]}>
                         <Contacts
                             color={ColorTypes.DARK}
-                            icon={locationIcon}
+                            icon={{ src: locationIcon, alt: "location" }}
                             text="г. Кокчетав, ул. Ж. Ташенова 129Б"
                             subtext="(Рынок Восточный)"
                         />
                         <Contacts
                             color={ColorTypes.DARK}
-                            icon={mailIcon}
+                            icon={{ src: mailIcon, alt: "mail" }}
                             text="opt.sultan@mail.ru "
                             subtext="На связи в любое время"
                         />
                         <Contacts
                             color={ColorTypes.DARK}
-                            icon={phoneEmptyIcon}
+                            icon={{ src: phoneEmptyIcon, alt: "phone" }}
                             text="Отдел продаж"
                             subtext="+7 (777) 490-00-91"
                         />
@@ -88,7 +100,7 @@ const Header: FC = () => {
                             время работы: 9:00-20:00
                         </p>
                         <div className={classes["mobile-call-container"]}>
-                            <img src={phoneIcon} />
+                            <img src={phoneIcon} alt="phone" />
                             <p className={classes["mobile-call"]}>
                                 Заказать звонок
                             </p>
@@ -106,7 +118,7 @@ const Header: FC = () => {
                         />
                         <CustomButton
                             text="Прайс-лист"
-                            icon={downloadIcon}
+                            icon={{ src: downloadIcon, alt: "download" }}
                             isSmall={false}
                         />
                     </div>
@@ -120,13 +132,13 @@ const Header: FC = () => {
                 <div className={classes["contacts-container"]}>
                     <Contacts
                         color={ColorTypes.DARK}
-                        icon={locationIcon}
+                        icon={{ src: locationIcon, alt: "location" }}
                         text="г. Кокчетав, ул. Ж. Ташенова 129Б"
                         subtext="(Рынок Восточный)"
                     />
                     <Contacts
                         color={ColorTypes.DARK}
-                        icon={mailIcon}
+                        icon={{ src: mailIcon, alt: "mail" }}
                         text="opt.sultan@mail.ru "
                         subtext="На связи в любое время"
                     />
@@ -144,18 +156,25 @@ const Header: FC = () => {
                 </Link>
             </div>
             <div className={classes.bottom}>
-                <img src={logo} />
-                <CustomButton text="Каталог" icon={frameIcon} isSmall={false} />
+                <img src={logo} alt="logo" />
+                <CustomButton
+                    text="Каталог"
+                    icon={{ src: frameIcon, alt: "frame" }}
+                    isSmall={false}
+                />
                 <div className={classes["input-container"]}>
-                    <CustomInput placeholder="Поиск..." icon={searchIcon} />
+                    <CustomInput
+                        placeholder="Поиск..."
+                        icon={{ src: searchIcon, alt: "search" }}
+                    />
                 </div>
                 <Consultant
                     color={ColorTypes.DARK}
-                    pic={consultantPic}
+                    img={{ src: consultantPic, alt: "consultant" }}
                 ></Consultant>
                 <CustomButton
                     text="Прайс-лист"
-                    icon={downloadIcon}
+                    icon={{ src: downloadIcon, alt: "download" }}
                     isSmall={false}
                 />
                 <Cart></Cart>

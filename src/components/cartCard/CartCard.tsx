@@ -22,14 +22,18 @@ const CartCard: FC<CartCardProps> = ({ item }) => {
     const { setCartItem } = useActions();
     const deleteItem = () => {
         setCartItem(
-            items.filter((i) => item.product.barcode != i.product.barcode)
+            items.filter((i) => item.product.barcode !== i.product.barcode)
         );
     };
     const totalPrice = Number(product.price) * count;
     return (
         <div className={classes.container}>
             <div className={classes["img-container"]}>
-                <img className={classes.img} src={img} />
+                <img
+                    className={classes.img}
+                    src={img}
+                    alt={item.product.name}
+                />
             </div>
             <div className={classes.info}>
                 <Size {...{ type: type, size: product.size }} />
@@ -53,7 +57,7 @@ const CartCard: FC<CartCardProps> = ({ item }) => {
                 <p className={classes.price}>{`${totalPrice} ₸`}</p>
                 <div className={classes.delimiter}></div>
                 <button className={classes.button} onClick={deleteItem}>
-                    <img src={deleteIcon} />
+                    <img src={deleteIcon} alt="delete" />
                 </button>
             </div>
         </div>
