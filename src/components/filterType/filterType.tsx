@@ -1,9 +1,8 @@
-import { FC, useEffect, useState } from "react";
-import classes from "./filterType.module.css";
+import { FC } from "react";
+import classes from "./filterType.module.sass";
 import CheckboxList from "../checkboxList/CheckboxList";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
-import { Product } from "../../types/types";
 
 const FilterType: FC = () => {
     const { care_types } = useTypedSelector((state) => state.product);

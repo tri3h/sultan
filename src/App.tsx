@@ -1,13 +1,12 @@
-import React, { FC } from "react";
-import CatalogPage from "./pages/catalog/CatalogPage";
-import "./App.css";
+import { FC } from "react";
+import "./App.sass";
 import AppRouter from "./components/appRouter/AppRouter";
 
 const App: FC = () => {
     return (
-        <div>
+        <>
             <AppRouter />
-        </div>
+        </>
     );
 };
 

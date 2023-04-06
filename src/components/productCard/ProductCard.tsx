@@ -1,8 +1,7 @@
 import { FC } from "react";
-import classes from "./ProductCard.module.css";
-
+import classes from "./ProductCard.module.sass";
 import CustomButton from "../button/CustomButton";
-
+import { Link } from "react-router-dom";
 import cartIcon from "../../assets/img/svg/cart-small.svg";
 import Size from "../size/Size";
 import Features from "../features/Features";
@@ -14,7 +13,7 @@ import {
     getImageByName,
     getProductSizeType,
 } from "../../utils/utils";
-import { Link } from "react-router-dom";
+
 
 interface ProductCardProps {
     product: Product;

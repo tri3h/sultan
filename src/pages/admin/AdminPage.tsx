@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import classes from "./AdminPage.module.css";
+import classes from "./AdminPage.module.sass";
 import AdminProductCard from "../../components/adminProductCard/AdminProductCard";
 import { LOCAL_STORAGE_DATA, Product } from "../../types/types";
 import { getProductsFromStorage, getTypesFromStorage } from "../../utils/utils";

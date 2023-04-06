@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./CustomInput.module.css";
+import classes from "./CustomInput.module.sass";
 
 interface CustomInputProps {
     placeholder: string;

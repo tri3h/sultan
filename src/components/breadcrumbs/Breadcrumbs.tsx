@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./Breadcrumbs.module.css";
+import classes from "./Breadcrumbs.module.sass";
 import { Link } from "react-router-dom";
 
 interface Link {

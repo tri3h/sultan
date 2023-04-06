@@ -1,5 +1,5 @@
-import { FC, useEffect, useState } from "react";
-import classes from "./filterProducer.module.css";
+import { FC } from "react";
+import classes from "./filterProducer.module.sass";
 import CustomInput from "../input/CustomInput";
 
 import searchIcon from "../../assets/img/svg/search.svg";
@@ -8,11 +8,9 @@ import { useActions } from "../../hooks/useActions";
 import CheckboxListExpandable, {
     CheckboxItem,
 } from "../checkboxListExpandable/CheckboxListExpandable";
-import { Product } from "../../types/types";
 
 const FilterProducer: FC = () => {
-    const { producer_checkboxes, producer_search, filtered_products } =
-        useTypedSelector((state) => state.filter);
+    const { producer_checkboxes } = useTypedSelector((state) => state.filter);
     const { setProducerCheckboxes, setProducerSearch } = useActions();
     const { products } = useTypedSelector((state) => state.product);
 

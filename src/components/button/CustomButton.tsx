@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./CustomButton.module.css";
+import classes from "./CustomButton.module.sass";
 
 interface CustomButtonProps {
     text: string;

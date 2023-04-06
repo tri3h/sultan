@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import classes from "./ProductPage.module.css";
+import classes from "./ProductPage.module.sass";
 import { useNavigate, useParams } from "react-router-dom";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { getImageByName, getProductSizeType } from "../../utils/utils";
@@ -170,10 +170,10 @@ const ProductPage: FC = () => {
     }
 
     return (
-        <div>
+        <>
             <Header />
             {content} <Footer />
-        </div>
+        </>
     );
 };
 

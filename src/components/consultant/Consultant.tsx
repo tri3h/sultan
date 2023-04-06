@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./Consultant.module.css";
+import classes from "./Consultant.module.sass";
 import { Color, ColorTypes } from "../../types/types";
 
 interface ConsultantProps {

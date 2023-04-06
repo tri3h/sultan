@@ -1,5 +1,5 @@
 import { FC, useEffect } from "react";
-import classes from "./CatalogPage.module.css";
+import classes from "./CatalogPage.module.sass";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 
@@ -76,7 +76,7 @@ const CatalogPage: FC = () => {
         price_end,
     ]);
     return (
-        <div>
+        <>
             <Header />
             <main className={classes.main}>
                 <Breadcrumbs links={breadcrumbs} />
@@ -109,7 +109,7 @@ const CatalogPage: FC = () => {
                 </div>
             </main>
             <Footer />
-        </div>
+        </>
     );
 };
 

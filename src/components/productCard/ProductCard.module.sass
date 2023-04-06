@@ -1,0 +1,45 @@
+@import "../../styles/variables.sass"
+
+.container 
+    display: flex
+    flex-direction: column
+    align-items: start
+    width: 326px
+    background: $color-white
+    box-shadow: 0px 14px 39px -11px $color-black-06
+    border-radius: 10px
+    padding: 30px 21px
+
+.img 
+    max-width: 220px
+    max-height: 180px
+    margin-bottom: 4px
+    align-self: center
+
+.size 
+    margin-bottom: 10px
+
+.name 
+    font-weight: 700
+    font-size: 16px
+    line-height: 130%
+    color: $color-cod-gray
+    margin-bottom: 20px
+    transition-duration: 0.3s
+    &:hover 
+        color: $color-golden-tainoi
+
+.description 
+    margin-bottom: 15px
+
+.buying 
+    display: flex
+    flex-direction: row
+    align-items: center
+    gap: 40px
+
+.price 
+    font-weight: 800
+    font-size: 16px
+    line-height: 130%
+    color: $color-cod-gray

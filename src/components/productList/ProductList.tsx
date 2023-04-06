@@ -1,9 +1,8 @@
-import { FC, useEffect } from "react";
-import classes from "./ProductList.module.css";
+import { FC } from "react";
+import classes from "./ProductList.module.sass";
 import ProductCard from "../productCard/ProductCard";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import Pagination from "../pagination/Pagination";
-import { getImageByName, getProductSizeType } from "../../utils/utils";
 
 const ProductList: FC = () => {
     let { filtered_products, page, limit } = useTypedSelector(

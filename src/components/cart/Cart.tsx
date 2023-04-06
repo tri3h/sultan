@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
-import classes from "./Cart.module.css";
+import classes from "./Cart.module.sass";
 import cartIcon from "../../assets/img/svg/cart.svg";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useViewport } from "../../hooks/useViewport";
 

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./ThanksModal.module.css";
+import classes from "./ThanksModal.module.sass";
 
 import cancelIcon from "../../assets/img/svg/cancel.svg";
 import okIcon from "../../assets/img/svg/ok.svg";
@@ -10,7 +10,7 @@ interface ThanksModalProps {
 
 const ThanksModal: FC<ThanksModalProps> = ({ close }) => {
     return (
-        <div>
+        <>
             <div className={classes.container} onClick={close}></div>
             <div className={classes.center}>
                 <div className={classes.window}>
@@ -28,7 +28,7 @@ const ThanksModal: FC<ThanksModalProps> = ({ close }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

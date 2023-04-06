@@ -1,10 +1,10 @@
 import { FC } from "react";
-import classes from "./Pagination.module.css";
+import classes from "./Pagination.module.sass";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
+import { useActions } from "../../hooks/useActions";
 
 import arrowLeft from "../../assets/img/svg/arrow-left.svg";
 import arrowRight from "../../assets/img/svg/arrow-right.svg";
-import { useActions } from "../../hooks/useActions";
 
 const Pagination: FC = () => {
     const { filtered_products, page, limit } = useTypedSelector(

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./Features.module.css";
+import classes from "./Features.module.sass";
 
 interface feature {
     name: string;

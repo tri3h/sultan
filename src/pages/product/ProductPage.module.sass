@@ -1,0 +1,140 @@
+@import "../../styles/variables.sass"
+
+.no-product
+    font-size: 40px
+    padding: 20px
+
+.main
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    padding: 45px 277px 60px 277px
+    @media (max-width: $screen-size-elg)
+        padding: 50px
+    @media (max-width: $screen-size-md)
+        padding: 15px
+
+.product-container
+    display: flex
+    flex-direction: row
+    gap: 40px
+    justify-content: center
+    padding-top: 60px
+    @media (max-width: $screen-size-lg)
+        flex-direction: column
+    @media (max-width: $screen-size-md)
+        gap: 20px
+
+.img
+    max-width: 660px
+    height: 100%
+    @media (max-width: $screen-size-md)
+        max-width: 70%
+        align-self: center
+
+.info
+    padding-top: 40px
+    @media (max-width: $screen-size-md)
+        padding-top: 15px
+
+.having-text
+    font-weight: 500
+    font-size: 14px
+    line-height: 130%
+    color: $color-malachite
+    margin-bottom: 10px
+
+.title
+    font-weight: 400
+    font-size: 30px
+    line-height: 150%
+    color: $color-cod-gray
+    margin-bottom: 10px
+
+.size
+    margin-bottom: 15px
+    @media (max-width: $screen-size-md)
+        display: none
+
+.buying-container
+    display: flex
+    flex-direction: row
+    align-items: center
+    gap: 40px
+    margin-bottom: 38px
+    @media (max-width: $screen-size-lg)
+        flex-wrap: wrap
+
+.price
+    font-weight: 800
+    font-size: 30px
+    line-height: 130%
+    color: $color-cod-gray
+
+.share
+    display: flex
+    flex-direction: row
+    gap: 10px
+    margin-bottom: 35px
+    @media (max-width: $screen-size-lg)
+        flex-wrap: wrap
+    &__item
+        display: flex
+        flex-direction: row
+        gap: 10px
+        align-items: center
+        justify-content: center
+        text-align: center
+        box-shadow: 0px 15px 70px -11px $color-dark-brown-04
+        border-radius: 10px
+        padding: 10px 30px
+        height: 77px
+        cursor: pointer
+        &:hover
+            background: $color-goldenrod-10
+        @media (max-width: $screen-size-md)
+            width: 100%
+    &__text
+        font-weight: 400
+        font-size: 12px
+        line-height: 150%
+        text-align: center
+        color: $color-fiord
+        &_bold
+            font-weight: 700
+            line-height: 17px
+
+.features
+    margin-bottom: 30px
+
+.subtitle-container
+    display: flex
+    flex-direction: row
+    gap: 5px
+    margin-bottom: 15px
+
+.subtitle
+    font-weight: 500
+    font-size: 16px
+    line-height: 150%
+    color: $color-cod-gray
+    display: inline-block
+
+.description
+    font-weight: 300
+    font-size: 12px
+    line-height: 150%
+    color: $color-fiord
+    max-width: 600px
+    margin-bottom: 20px
+
+.delimiter
+    width: 270px
+    height: 1px
+    opacity: 0.3
+    border: 1px dashed $color-fiord
+    margin-bottom: 20px
+
+.arrow_down
+    @media (max-width: $screen-size-md)
+        transform: rotate(180deg)

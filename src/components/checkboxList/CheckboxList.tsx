@@ -1,5 +1,5 @@
-import { FC, useState } from "react";
-import classes from "./CheckboxList.module.css";
+import { FC } from "react";
+import classes from "./CheckboxList.module.sass";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 
 interface CheckboxListProps {

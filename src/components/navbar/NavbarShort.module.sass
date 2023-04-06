@@ -1,0 +1,28 @@
+@import "../../styles/variables.sass"
+.list
+    display: flex
+    flex-direction: row
+    gap: 30px
+    list-style: none
+    @media (max-width:$screen-size-md)
+        flex-direction: column
+        gap: 20px
+
+.link
+    font-weight: 400
+    font-size: 14px
+    line-height: 150%
+    color: $color-fiord
+    text-decoration: none
+    transition-duration: 0.3s
+    padding-right: 30px
+    padding-top: 4px
+    padding-bottom: 4px
+    border-right: 1px dashed $color-black-squeeze-10
+    &:hover
+        color: $color-golden-tainoi
+    @media (max-width:$screen-size-md)
+        border: none
+    &_no-delimeter
+        border-right: none
+

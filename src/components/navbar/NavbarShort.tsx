@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./NavbarShort.module.css";
+import classes from "./NavbarShort.module.sass";
 
 interface NavbarShortProps {
     items: string[];

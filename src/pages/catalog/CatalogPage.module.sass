@@ -1,0 +1,72 @@
+@import "../../styles/variables.sass"
+    
+.main
+    padding: 50px 260px 112px 260px
+    @media (max-width: $screen-size-elg)
+        padding: 50px
+    @media (max-width: $screen-size-md)
+        padding: 15px
+
+.title
+    font-weight: 500
+    font-size: 40px
+    line-height: 120%
+    text-transform: uppercase
+    color: $color-cod-gray
+    @media (max-width: $screen-size-md)
+        font-size: 20px
+        line-height: 120%
+
+.subtitle
+    font-weight: 500
+    font-size: 16px
+    line-height: 150%
+    color: $color-cod-gray
+    text-transform: uppercase
+    @media (max-width: $screen-size-md)
+        flex-basis: 90%
+
+.text
+    font-weight: 400
+    font-size: 14px
+    line-height: 150%
+    color: $color-fiord
+
+.top
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    @media (max-width: $screen-size-md)
+        flex-direction: column
+        margin-bottom: 20px
+
+.shadow-blocks
+    display: flex
+    flex-direction: row
+    gap: 11px
+    margin-bottom: 30px
+    @media (max-width: $screen-size-md)
+        display: none
+
+.content
+    display: flex
+    flex-direction: row
+    gap: 108px
+    @media (max-width: $screen-size-md)
+        flex-direction: column
+
+.filters
+    display: flex
+    flex-direction: column
+    gap: 30px
+    @media (max-width: $screen-size-md)
+        flex-direction: row
+        flex-wrap: wrap
+
+.data
+    display: flex
+    flex-direction: column
+    gap: 68px
+
+
+

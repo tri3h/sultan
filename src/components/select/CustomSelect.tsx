@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./CustomSelect.module.css";
+import classes from "./CustomSelect.module.sass";
 
 interface CustomSelectOptions {
     value: string;

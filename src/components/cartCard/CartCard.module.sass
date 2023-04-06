@@ -1,0 +1,87 @@
+@import "../../styles/variables.sass"
+
+.container 
+    display: flex
+    flex-direction: row
+    align-items: center
+    @media (max-width: $screen-size-md)
+        flex-direction: column
+        align-items: center
+        gap: 15px
+
+.img
+    max-width: 281px
+    max-height: 191px
+    &-container 
+        width: 281px
+        height: 191px
+        margin-right: 20px
+        display: flex
+        justify-content: center
+        align-self: flex-start
+        @media (max-width: $screen-size-md)
+            align-self: center
+
+.info 
+    display: flex
+    flex-direction: column
+    gap: 10px
+    margin-right: 41px
+    max-width: 500px
+
+.name 
+    font-weight: 700
+    font-size: 30px
+    line-height: 36px
+    color: $color-cod-gray
+    transition-duration: 0.3s
+    &:hover 
+        color: $color-golden-tainoi
+    @media (max-width: $screen-size-md)
+        font-size: 20px
+        line-height: 24px
+
+
+.description 
+    font-weight: 300
+    font-size: 12px
+    line-height: 150%
+    color: $color-fiord
+
+
+.buttons-container 
+    display: flex
+    flex-direction: row
+    align-items: center
+
+
+.delimiter 
+    width: 1px
+    height: 49px
+    opacity: 0.2
+    border: 1px dashed $color-fiord
+    margin-right: 44px
+    margin-left: 44px
+    @media (max-width: $screen-size-md)
+        margin-right: 15px
+        margin-left: 15px
+    &_left 
+        @media (max-width: $screen-size-md)
+            display: none
+
+
+.price 
+    font-weight: 700
+    font-size: 30px
+    line-height: 130%
+    color: $color-cod-gray
+    @media (max-width: $screen-size-md)
+        font-size: 16px
+
+
+.button 
+    padding: 10px 10px
+    background: $color-golden-tainoi
+    border-radius: 79px
+    &:hover 
+        box-shadow: 5px 5px 20px -5px $color-golden-tainoi

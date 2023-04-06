@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./CustomError.module.css";
+import classes from "./CustomError.module.sass";
 
 interface CustomErrorProps {
     message: string;

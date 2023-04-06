@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import classes from "./Counter.module.css";
+import classes from "./Counter.module.sass";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
 import { addToCart } from "../../utils/utils";

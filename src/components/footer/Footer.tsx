@@ -1,5 +1,5 @@
-import { FC, useEffect, useRef, useState } from "react";
-import classes from "./Footer.module.css";
+import { FC } from "react";
+import classes from "./Footer.module.sass";
 
 import CustomInput from "../input/CustomInput";
 import NavbarLong from "../navbar/NavbarLong";
@@ -103,29 +103,6 @@ const Footer: FC = () => {
                     </div>
                 ) : null}
             </div>
-
-            {/* <div className={classes["contacts-container"]}>
-                <h2 className={classes.title}>Контакты:</h2>
-                <Consultant color={ColorTypes.LIGHT} />
-                <div className={classes["mail-container"]}>
-                    <Contacts
-                        color={ColorTypes.LIGHT}
-                        text="opt.sultan@mail.ru "
-                        subtext="На связи в любое время"
-                    />
-                    <div className={classes["icon-container"]}>
-                        <img className={classes.icon} src={visaIcon} />
-                        <img className={classes.icon} src={mastercardIcon} />
-                    </div>
-                </div>
-                <div>
-                    <p className={classes.text}>Связь в мессенджерах:</p>
-                    <div className={classes["icon-container"]}>
-                        <img className={classes.icon} src={whatsUpIcon} />
-                        <img className={classes.icon} src={telegramIcon} />
-                    </div>
-                </div>
-            </div> */}
         </footer>
     );
 };

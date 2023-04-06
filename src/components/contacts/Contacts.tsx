@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./Contacts.module.css";
+import classes from "./Contacts.module.sass";
 import { Color, ColorTypes } from "../../types/types";
 
 interface ContactsProps {

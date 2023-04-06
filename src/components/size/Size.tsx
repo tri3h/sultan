@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./Size.module.css";
+import classes from "./Size.module.sass";
 
 import { ProductSize, ProductSizeTypes } from "../../types/types";
 

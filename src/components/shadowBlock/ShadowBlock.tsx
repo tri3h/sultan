@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./ShadowBlock.module.css";
+import classes from "./ShadowBlock.module.sass";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
 

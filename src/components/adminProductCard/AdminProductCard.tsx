@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import classes from "./AdminProductCard.module.css";
+import classes from "./AdminProductCard.module.sass";
 import { Product, ProductSizeTypes } from "../../types/types";
 import CustomError from "../error/CustomError";
 import { getProductsFromStorage, getTypesFromStorage } from "../../utils/utils";

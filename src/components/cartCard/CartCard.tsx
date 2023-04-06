@@ -1,14 +1,14 @@
 import { FC } from "react";
-import classes from "./CartCard.module.css";
+import classes from "./CartCard.module.sass";
 import Size from "../size/Size";
 import Counter from "../counter/Counter";
-
-import deleteIcon from "../../assets/img/svg/delete.svg";
 import { CartItem } from "../../store/reducers/cart/types";
 import { getImageByName, getProductSizeType } from "../../utils/utils";
 import { Link } from "react-router-dom";
 import { useActions } from "../../hooks/useActions";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
+
+import deleteIcon from "../../assets/img/svg/delete.svg";
 
 interface CartCardProps {
     item: CartItem;

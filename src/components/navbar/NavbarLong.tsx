@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./NavbarLong.module.css";
+import classes from "./NavbarLong.module.sass";
 
 interface NavbarLongProps {
     items: string[];

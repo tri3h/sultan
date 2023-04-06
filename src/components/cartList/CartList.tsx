@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./CartList.module.css";
+import classes from "./CartList.module.sass";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import CartCard from "../cartCard/CartCard";
 

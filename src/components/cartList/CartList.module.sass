@@ -1,0 +1,20 @@
+@import "../../styles/variables.sass"
+    
+.list 
+    display: flex
+    flex-direction: column
+    gap: 50px
+    @media (max-width: $screen-size-md) 
+        gap: 20px
+
+.item 
+    border-top: 1px dashed $color-fiord-30
+    padding-top: 50px
+    &_last 
+        border-bottom: 1px dashed $color-fiord-30
+        padding-bottom: 50px
+
+
+
+    
+

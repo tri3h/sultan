@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import classes from "./CheckboxListExpandable.module.css";
+import classes from "./CheckboxListExpandable.module.sass";
 
 export interface CheckboxItem {
     name: string;
@@ -40,7 +40,7 @@ const CheckboxListExpandable: FC<CheckboxListExpandableProps> = ({
         <div className={classes.container}>
             <ul>{isShowAll ? lis : shortList}</ul>
             {isShowAll ? null : (
-                <span className={classes.show} onClick={showAll}>
+                <span className={classes["show-all"]} onClick={showAll}>
                     Показать все
                 </span>
             )}

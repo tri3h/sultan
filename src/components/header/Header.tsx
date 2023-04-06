@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import classes from "./Header.module.css";
+import classes from "./Header.module.sass";
 
 import CustomButton from "../button/CustomButton";
 import CustomInput from "../input/CustomInput";
@@ -162,7 +162,7 @@ const Header: FC = () => {
             </div>
         </header>
     );
-    return <div>{width < breakpoint ? mobileHeader : desktopHeader}</div>;
+    return <>{width < breakpoint ? mobileHeader : desktopHeader}</>;
 };
 
 export default Header;

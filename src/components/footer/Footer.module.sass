@@ -1,0 +1,91 @@
+@import "../../styles/variables.sass"
+    
+.footer 
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    background: $color-fiord
+    padding: 71px 277px 116px 277px
+    @media (max-width: $screen-size-elg) 
+        padding: 50px
+    @media (max-width: $screen-size-lg)
+        flex-wrap: wrap
+        gap: 50px
+        justify-content: center
+    @media (max-width: $screen-size-md)
+        padding: 15px
+
+.subscription-container 
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    gap: 15px
+    @media (max-width: $screen-size-md)
+        flex-direction: row
+        flex-wrap: wrap
+        gap: 20px
+
+.img 
+    filter: invert(1) brightness(10)
+    margin-bottom: 15px
+    @media (max-width: $screen-size-md)
+        max-width: 97px
+
+.description 
+    font-weight: 400
+    font-size: 16px
+    line-height: 150%
+    color: $color-white
+    margin-bottom: 30px
+    @media (max-width: $screen-size-md)
+        font-size: 12px
+        margin: 0
+
+.email 
+    width: 280px
+
+.text 
+    font-weight: 400
+    font-size: 12px
+    line-height: 150%
+    color: $color-white
+
+.title 
+    font-weight: 600
+    font-size: 20px
+    line-height: 150%
+    color: $color-white
+    margin-bottom: 5px
+
+.icon
+    cursor: pointer
+    &:hover 
+        transform: scale(1.1)
+    &-container 
+    display: flex
+    flex-direction: row
+    gap: 10px
+
+.prices-container 
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+.contacts-container 
+    display: flex
+    flex-direction: column
+    gap: 25px
+    @media (max-width: $screen-size-md)
+        flex-wrap: wrap
+
+.mail-container 
+    display: flex
+    flex-direction: column
+    gap: 25px
+
+
+.messenger-container 
+    @media (max-width: $screen-size-md)
+        display: flex
+        flex-direction: column
+        gap: 17px

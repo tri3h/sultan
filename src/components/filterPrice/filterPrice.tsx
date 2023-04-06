@@ -1,5 +1,5 @@
-import { FC, useEffect, useState } from "react";
-import classes from "./filterPrice.module.css";
+import { FC } from "react";
+import classes from "./filterPrice.module.sass";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
 

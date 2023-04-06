@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import classes from "./CartPage.module.css";
+import classes from "./CartPage.module.sass";
 import CartList from "../../components/cartList/CartList";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
@@ -44,7 +44,7 @@ const CartPage: FC = () => {
         </div>
     );
     return (
-        <div>
+        <>
             <Header />
             <main className={classes.main}>
                 <Breadcrumbs links={breadcrumbs} />
@@ -53,7 +53,7 @@ const CartPage: FC = () => {
                 {isBought ? <ThanksModal close={closeModal} /> : null}
             </main>
             <Footer />
-        </div>
+        </>
     );
 };
 

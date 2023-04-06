@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import classes from "./Sorting.module.css";
+import classes from "./Sorting.module.sass";
 import CustomSelect from "../select/CustomSelect";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";

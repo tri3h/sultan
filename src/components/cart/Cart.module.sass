@@ -1,0 +1,45 @@
+@import "../../styles/variables.sass"
+
+.container 
+    display: flex
+    flex-direction: row
+    gap: 14px
+    cursor: pointer
+    transition-duration: 0.2s
+    &:hover 
+        transform: scale(1.2)
+
+.pic
+    &-container 
+        position: relative
+        width: 56px
+        height: 46px
+    &-counter 
+        position: absolute
+        top: -5px
+        right: 0
+        font-weight: 700
+        font-size: 14px
+        line-height: 17px
+        text-align: center
+        color: $color-white
+        padding: 3px 8px
+        background: $color-golden-tainoi
+        border: 3px solid $color-white
+        border-radius: 50%
+
+.text
+    font-weight: 300
+    font-size: 12px
+    line-height: 150%
+    color: $color-fiord
+    &-container 
+        display: flex
+        flex-direction: column
+
+.price 
+    font-weight: 600
+    font-size: 14px
+    line-height: 150%
+    color: $color-cod-gray
+
