@@ -34,3 +34,5 @@ export interface Img {
     src: string;
     alt: string;
 }
+
+export const MOBILE_BREAKPOINT = 992;

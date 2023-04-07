@@ -6,34 +6,30 @@ import { useActions } from "../../hooks/useActions";
 import { Product } from "../../types/types";
 
 const Sorting: FC = () => {
+    const { filtered_products } = useTypedSelector((state) => state.filter);
+    const { setSortedProducts } = useActions();
     const options = [
         { name: "По возрастанию названия", value: "name_increase" },
         { name: "По убыванию названия", value: "name_decrease" },
         { name: "По возрастанию цены", value: "price_increase" },
         { name: "По убыванию цены", value: "price_decrease" },
     ];
-    const { filtered_products } = useTypedSelector((state) => state.filter);
-    const { setFilteredProducts } = useActions();
     const [sortType, setSortType] = useState(options[0].value);
-    useEffect(() => {
-        sortProducts();
-    }, [filtered_products]);
-
     const sortByName = (
         products: Product[],
         sortResults: number[]
     ): Product[] => {
         const sorted = [...products].sort((a: Product, b: Product) => {
-            if (a["name"] > b["name"]) {
+            let result = a["name"].localeCompare(b["name"]);
+            if (result === 1) {
                 return sortResults[0];
-            } else if (a["name"] < b["name"]) {
+            } else if (result === -1) {
                 return sortResults[2];
             }
             return sortResults[1];
         });
         return sorted;
     };
-
     const sortByPrice = (
         products: Product[],
         sortResults: number[]
@@ -50,14 +46,13 @@ const Sorting: FC = () => {
         });
         return sorted;
     };
-
     const sortProducts = () => {
         const [sortBy, order] = sortType.split("_");
         const sortResults = [1, 0, -1];
         if (order === "decrease") {
             sortResults.reverse();
         }
-        let sortedProducts = filtered_products;
+        let sortedProducts = [...filtered_products];
         switch (sortBy) {
             case "price":
                 sortedProducts = sortByPrice(filtered_products, sortResults);
@@ -66,16 +61,20 @@ const Sorting: FC = () => {
                 sortedProducts = sortByName(filtered_products, sortResults);
                 break;
         }
-        setFilteredProducts(sortedProducts);
+        setSortedProducts(sortedProducts);
     };
-    const onClick = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setSortType(event.currentTarget.value);
+    useEffect(() => {
         sortProducts();
-    };
+    }, [filtered_products, sortType]);
     return (
         <div className={classes.container}>
             <span className={classes.name}>Сортировка: </span>
-            <CustomSelect options={options} onChange={onClick} />
+            <CustomSelect
+                options={options}
+                onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
+                    setSortType(event.currentTarget.value)
+                }
+            />
         </div>
     );
 };

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useViewport } from "../../hooks/useViewport";
 import { RouteNames } from "../../routes";
+import { MOBILE_BREAKPOINT } from "../../types/types";
 
 const Cart: FC = () => {
     const navigate = useNavigate();
@@ -12,7 +13,6 @@ const Cart: FC = () => {
         navigate(RouteNames.CART);
     };
     const { width } = useViewport();
-    const breakpoint = 992;
     const { items } = useTypedSelector((state) => state.cart);
     const getTotalCount = () => {
         return items.reduce((prev, item) => item.count + prev, 0);
@@ -35,7 +35,7 @@ const Cart: FC = () => {
                 <span className={classes.counter}>{count}</span>
                 <img src={cartIcon} alt="cart" />
             </div>
-            {width > breakpoint ? (
+            {width > MOBILE_BREAKPOINT ? (
                 <div className={classes["text-container"]}>
                     <span className={classes.text}>Корзина</span>
                     <span className={classes.price}>{`${price} ₸`}</span>

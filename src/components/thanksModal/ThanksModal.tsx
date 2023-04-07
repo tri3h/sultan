@@ -1,6 +1,5 @@
 import { FC } from "react";
 import classes from "./ThanksModal.module.sass";
-
 import cancelIcon from "../../assets/img/svg/cancel.svg";
 import okIcon from "../../assets/img/svg/ok.svg";
 

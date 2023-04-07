@@ -28,6 +28,11 @@ const AdminPage: FC = () => {
             {product.name}
         </option>
     ));
+    const careTypesOptions = types.map((type) => (
+        <option key={type} value={type}>
+            {type}
+        </option>
+    ));
     const deleteProduct = () => {
         const barcode = editingDefaultValues.barcode;
         const newProducts = products.filter(
@@ -39,10 +44,9 @@ const AdminPage: FC = () => {
         );
         setEditingDefaultValues(addingDefaultValues);
     };
-    const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const chooseEditProduct = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const barcode = event.currentTarget.value;
         const product = products.find((p) => p.barcode === barcode);
-
         if (product) {
             setEditingDefaultValues({
                 name: product.name,
@@ -58,18 +62,8 @@ const AdminPage: FC = () => {
             });
         }
     };
-    const careTypesOptions = types.map((type) => (
-        <option key={type} value={type}>
-            {type}
-        </option>
-    ));
-    const onCareTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const changeCareType = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setCareTypeSelected(event.currentTarget.value);
-        setCareTypeChanged(event.currentTarget.value);
-    };
-    const onCareTypeInputChange = (
-        event: React.ChangeEvent<HTMLInputElement>
-    ) => {
         setCareTypeChanged(event.currentTarget.value);
     };
     const saveCareType = () => {
@@ -125,7 +119,7 @@ const AdminPage: FC = () => {
                 <div className={classes["care-type"]}>
                     <select
                         className={classes.select}
-                        onChange={onCareTypeChange}
+                        onChange={changeCareType}
                     >
                         <option disabled selected hidden></option>
                         {careTypesOptions}
@@ -133,7 +127,11 @@ const AdminPage: FC = () => {
                     <input
                         className={classes.select}
                         value={careTypeChanged}
-                        onChange={onCareTypeInputChange}
+                        onChange={(
+                            event: React.ChangeEvent<HTMLInputElement>
+                        ) => {
+                            setCareTypeChanged(event.currentTarget.value);
+                        }}
                     ></input>
                     <button className={classes.button} onClick={saveCareType}>
                         Сохранить
@@ -142,16 +140,16 @@ const AdminPage: FC = () => {
             </div>
             <div>
                 <h1 className={classes.title}>Редактирование товаров</h1>
-                <div className={classes.selecting}>
+                <div className={classes["edit-container"]}>
                     <p className={classes.text}>
                         Выберите товар для редактирования:
                     </p>
                     <select
                         className={[
                             classes.select,
-                            classes["product-editing-select"],
+                            classes["edit-select"],
                         ].join(" ")}
-                        onChange={onChange}
+                        onChange={chooseEditProduct}
                     >
                         <option disabled selected hidden></option>
                         {productOptions}

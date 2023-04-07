@@ -1,7 +1,6 @@
 import { FC } from "react";
 import classes from "./filterProducer.module.sass";
 import CustomInput from "../input/CustomInput";
-
 import searchIcon from "../../assets/img/svg/search.svg";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
@@ -13,11 +12,7 @@ const FilterProducer: FC = () => {
     const { producer_checkboxes } = useTypedSelector((state) => state.filter);
     const { setProducerCheckboxes, setProducerSearch } = useActions();
     const { products } = useTypedSelector((state) => state.product);
-
-    const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setProducerSearch(event.currentTarget.value);
-    };
-    const onCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const changeProducer = (event: React.ChangeEvent<HTMLInputElement>) => {
         const name = event.currentTarget.name;
         if (event.currentTarget.checked) {
             setProducerCheckboxes([...producer_checkboxes, name]);
@@ -27,7 +22,6 @@ const FilterProducer: FC = () => {
             );
         }
     };
-
     const getItems = (): CheckboxItem[] => {
         const producers = products.map((value) => value.producer);
         let set = new Set([...producers]);
@@ -45,7 +39,6 @@ const FilterProducer: FC = () => {
         }
         return items;
     };
-
     return (
         <div className={classes.container}>
             <span className={classes.title}>Производитель</span>
@@ -53,13 +46,15 @@ const FilterProducer: FC = () => {
                 <CustomInput
                     placeholder="Поиск..."
                     icon={{ src: searchIcon, alt: "search" }}
-                    onChange={onInputChange}
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                        setProducerSearch(event.currentTarget.value);
+                    }}
                 />
             </div>
             <CheckboxListExpandable
                 items={getItems()}
                 maxVisible={4}
-                onChange={onCheckboxChange}
+                onChange={changeProducer}
             />
         </div>
     );

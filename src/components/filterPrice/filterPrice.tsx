@@ -8,30 +8,28 @@ const FilterPrice: FC = () => {
     const { price_start, price_end } = useTypedSelector(
         (state) => state.filter
     );
-    const onMinChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPriceStart(Number(event.target.value));
-    };
-    const onMaxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPriceEnd(Number(event.target.value));
-    };
     return (
         <div className={classes.container}>
             <p className={classes.title}>
                 Цена <span className={classes.symbol}>₸</span>
             </p>
-            <div className={classes.inputs}>
+            <div className={classes["input-container"]}>
                 <input
                     type="number"
                     className={classes.input}
                     defaultValue={price_start}
-                    onChange={onMinChange}
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                        setPriceStart(Number(event.target.value));
+                    }}
                 />
                 <span className={classes.symbol}>-</span>
                 <input
                     type="number"
                     className={classes.input}
                     defaultValue={price_end}
-                    onChange={onMaxChange}
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                        setPriceEnd(Number(event.target.value));
+                    }}
                 />
             </div>
         </div>

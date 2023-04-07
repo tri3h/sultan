@@ -10,26 +10,26 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 import Features from "../../components/features/Features";
-
 import cartIcon from "../../assets/img/svg/cart-small.svg";
 import shareIcon from "../../assets/img/svg/share.svg";
 import downloadIcon from "../../assets/img/svg/download-black.svg";
 import arrowIcon from "../../assets/img/svg/sorting-arrow-up.svg";
 import { Product } from "../../types/types";
+import { RouteNames } from "../../routes";
 
 const ProductPage: FC = () => {
     const params = useParams();
-    const navigate = useNavigate();
     const barcode = params.barcode || "";
+    const navigate = useNavigate();
     const { products } = useTypedSelector((state) => state.product);
     const product: Product | undefined = products.find(
         (product) => product.barcode === barcode
     );
+    const [isDescrShown, setIsDescrShown] = useState(true);
+    const [isCharactShown, setIsCharactShown] = useState(true);
     let content = (
         <div className={classes["no-product"]}>Нет такого товара</div>
     );
-    const [isDescrShown, setIsDescrShown] = useState(true);
-    const [isCharactShown, setIsCharactShown] = useState(true);
     if (typeof product !== "undefined") {
         const image = getImageByName(product.pic);
         const featuresShort = [
@@ -50,19 +50,13 @@ const ProductPage: FC = () => {
             { name: "Кол-во в коробке: ", value: product.size },
         ];
         const breadcrumbs = [
-            { name: "Главная", url: "/" },
-            { name: "Каталог", url: "/" },
-            { name: product.name, url: `/product/${product.barcode}` },
+            { name: "Главная", url: RouteNames.CATALOG },
+            { name: "Каталог", url: RouteNames.CATALOG },
+            {
+                name: product.name,
+                url: RouteNames.PRODUCT.split(":")[0] + product.barcode,
+            },
         ];
-        const onCartClick = () => {
-            navigate("/cart");
-        };
-        const onDescrClick = () => {
-            setIsDescrShown(!isDescrShown);
-        };
-        const onCharactClick = () => {
-            setIsCharactShown(!isCharactShown);
-        };
         content = (
             <main className={classes.main}>
                 <Breadcrumbs links={breadcrumbs} />
@@ -73,7 +67,7 @@ const ProductPage: FC = () => {
                         alt={product.name}
                     />
                     <div className={classes.info}>
-                        <p className={classes["having-text"]}>В наличии</p>
+                        <p className={classes["info-text"]}>В наличии</p>
                         <h1 className={classes.title}>{product.name}</h1>
                         <div className={classes.size}>
                             <Size
@@ -90,18 +84,20 @@ const ProductPage: FC = () => {
                                 text={"В корзину"}
                                 icon={{ src: cartIcon, alt: "cart" }}
                                 isSmall={false}
-                                onClick={onCartClick}
+                                onClick={() => {
+                                    navigate(RouteNames.CART);
+                                }}
                             />
                         </div>
-                        <ul className={classes["share"]}>
-                            <li className={classes["share__item"]}>
+                        <ul className={classes["share-list"]}>
+                            <li className={classes["share-item"]}>
                                 <img src={shareIcon} alt="share" />
                             </li>
-                            <li className={classes["share__item"]}>
-                                <p className={classes["share__text"]}>
+                            <li className={classes["share-item"]}>
+                                <p className={classes["share-text"]}>
                                     При покупке от{" "}
                                     <span
-                                        className={classes["share__text_bold"]}
+                                        className={classes["share-text_bold"]}
                                     >
                                         10 000 ₸
                                     </span>{" "}
@@ -109,11 +105,11 @@ const ProductPage: FC = () => {
                                     области
                                 </p>
                             </li>
-                            <li className={classes["share__item"]}>
+                            <li className={classes["share-item"]}>
                                 <p
                                     className={[
-                                        classes["share__text_bold"],
-                                        classes["share__text"],
+                                        classes["share-text_bold"],
+                                        classes["share-text"],
                                     ].join(" ")}
                                 >
                                     Прайс-лист
@@ -126,7 +122,9 @@ const ProductPage: FC = () => {
                         </div>
                         <div
                             className={classes["subtitle-container"]}
-                            onClick={onDescrClick}
+                            onClick={() => {
+                                setIsDescrShown(!isDescrShown);
+                            }}
                         >
                             <h3 className={classes.subtitle}>Описание</h3>
                             <img
@@ -150,7 +148,9 @@ const ProductPage: FC = () => {
                         <div className={classes.delimiter}></div>
                         <div
                             className={classes["subtitle-container"]}
-                            onClick={onCharactClick}
+                            onClick={() => {
+                                setIsCharactShown(!isCharactShown);
+                            }}
                         >
                             <h3 className={classes.subtitle}>Характеристики</h3>
                             <img

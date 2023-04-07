@@ -13,6 +13,7 @@ import {
     getImageByName,
     getProductSizeType,
 } from "../../utils/utils";
+import { RouteNames } from "../../routes";
 
 interface ProductCardProps {
     product: Product;
@@ -21,9 +22,6 @@ interface ProductCardProps {
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
     const { setCartItem } = useActions();
     const { items } = useTypedSelector((state) => state.cart);
-    const onCartClick = () => {
-        setCartItem(addToCart(product, items, 1));
-    };
     const type = getProductSizeType(product.type);
     const features = [
         { name: "Штрихкод: ", value: product.barcode },
@@ -38,19 +36,24 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
             <div className={classes.size}>
                 <Size {...{ type: type, size: product.size }} />
             </div>
-            <Link className={classes.name} to={`/product/${product.barcode}`}>
+            <Link
+                className={classes.name}
+                to={RouteNames.PRODUCT.split(":")[0] + product.barcode}
+            >
                 {product.name}
             </Link>
             <div className={classes.description}>
                 <Features {...{ features }} />
             </div>
-            <div className={classes.buying}>
+            <div className={classes["buy-container"]}>
                 <p className={classes.price}>{`${product.price} ₸`}</p>
                 <CustomButton
                     text={"В корзину"}
                     icon={{ src: cartIcon, alt: "cart" }}
                     isSmall={true}
-                    onClick={onCartClick}
+                    onClick={() => {
+                        setCartItem(addToCart(product, items, 1));
+                    }}
                 />
             </div>
         </div>

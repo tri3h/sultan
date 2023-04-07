@@ -14,7 +14,6 @@ const NavbarLong: FC<NavbarLongProps> = ({ items, title }) => {
             </a>
         </li>
     ));
-
     return (
         <nav>
             <h2 className={classes.title}>{title}</h2>

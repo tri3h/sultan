@@ -41,19 +41,11 @@
         font-size: 20px
         line-height: 24px
 
-
 .description 
     font-weight: 300
     font-size: 12px
     line-height: 150%
     color: $color-fiord
-
-
-.buttons-container 
-    display: flex
-    flex-direction: row
-    align-items: center
-
 
 .delimiter 
     width: 1px
@@ -69,7 +61,6 @@
         @media (max-width: $screen-size-md)
             display: none
 
-
 .price 
     font-weight: 700
     font-size: 30px
@@ -78,10 +69,13 @@
     @media (max-width: $screen-size-md)
         font-size: 16px
 
-
 .button 
     padding: 10px 10px
     background: $color-golden-tainoi
     border-radius: 79px
     &:hover 
         box-shadow: 5px 5px 20px -5px $color-golden-tainoi
+    &-container 
+        display: flex
+        flex-direction: row
+        align-items: center

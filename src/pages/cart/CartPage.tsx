@@ -8,22 +8,16 @@ import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import ThanksModal from "../../components/thanksModal/ThanksModal";
 import { useActions } from "../../hooks/useActions";
+import { RouteNames } from "../../routes";
 
 const CartPage: FC = () => {
-    const breadcrumbs = [
-        { name: "Главная", url: "/" },
-        { name: "Корзина", url: "/cart" },
-    ];
     const { items } = useTypedSelector((state) => state.cart);
-    const noItems = (
-        <div className={classes["no-items"]}>В корзине нет товаров</div>
-    );
+    const [isBought, setIsBought] = useState(false);
+    const { setCartItem } = useActions();
     const totalPrice = items.reduce(
         (prev, item) => Number(item.count) * Number(item.product.price) + prev,
         0
     );
-    const [isBought, setIsBought] = useState(false);
-    const { setCartItem } = useActions();
     const onBuyClick = () => {
         setCartItem([]);
         window.scrollTo(0, 0);
@@ -34,6 +28,13 @@ const CartPage: FC = () => {
         setIsBought(false);
         document.body.style.overflow = "";
     };
+    const breadcrumbs = [
+        { name: "Главная", url: RouteNames.CATALOG },
+        { name: "Корзина", url: RouteNames.CART },
+    ];
+    const noItems = (
+        <div className={classes["no-items"]}>В корзине нет товаров</div>
+    );
     const itemsList = (
         <div className={classes.cart}>
             <CartList />

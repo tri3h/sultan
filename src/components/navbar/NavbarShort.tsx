@@ -22,10 +22,9 @@ const NavbarShort: FC<NavbarShortProps> = ({ items }) => {
             </a>
         </li>
     ));
-
     return (
         <nav>
-            <ul className={classes["list"]}>{lis}</ul>
+            <ul className={classes.list}>{lis}</ul>
         </nav>
     );
 };

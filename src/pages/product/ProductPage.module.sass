@@ -36,13 +36,12 @@
     padding-top: 40px
     @media (max-width: $screen-size-md)
         padding-top: 15px
-
-.having-text
-    font-weight: 500
-    font-size: 14px
-    line-height: 130%
-    color: $color-malachite
-    margin-bottom: 10px
+    &-text
+        font-weight: 500
+        font-size: 14px
+        line-height: 130%
+        color: $color-malachite
+        margin-bottom: 10px
 
 .title
     font-weight: 400
@@ -72,13 +71,14 @@
     color: $color-cod-gray
 
 .share
-    display: flex
-    flex-direction: row
-    gap: 10px
-    margin-bottom: 35px
-    @media (max-width: $screen-size-lg)
-        flex-wrap: wrap
-    &__item
+    &-list
+        display: flex
+        flex-direction: row
+        gap: 10px
+        margin-bottom: 35px
+        @media (max-width: $screen-size-lg)
+            flex-wrap: wrap
+    &-item
         display: flex
         flex-direction: row
         gap: 10px
@@ -94,7 +94,7 @@
             background: $color-goldenrod-10
         @media (max-width: $screen-size-md)
             width: 100%
-    &__text
+    &-text
         font-weight: 400
         font-size: 12px
         line-height: 150%

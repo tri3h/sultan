@@ -18,7 +18,7 @@ const CheckboxListExpandable: FC<CheckboxListExpandableProps> = ({
     onChange,
 }) => {
     const [isShowAll, setIsShowAll] = useState(false);
-    const lis = items.map((item, index) => (
+    const lis = items.map((item) => (
         <li key={item.name} className={classes.item}>
             <label className={classes.label}>
                 <input
@@ -32,15 +32,17 @@ const CheckboxListExpandable: FC<CheckboxListExpandableProps> = ({
             </label>
         </li>
     ));
-    const showAll = (): void => {
-        setIsShowAll(true);
-    };
     const shortList = lis.slice(0, maxVisible);
     return (
         <div className={classes.container}>
             <ul>{isShowAll ? lis : shortList}</ul>
             {isShowAll ? null : (
-                <span className={classes["show-all"]} onClick={showAll}>
+                <span
+                    className={classes["show-all"]}
+                    onClick={() => {
+                        setIsShowAll(true);
+                    }}
+                >
                     Показать все
                 </span>
             )}

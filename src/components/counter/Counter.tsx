@@ -23,22 +23,26 @@ const Counter: FC<CounterProps> = ({ product }) => {
         if (newCount) {
             setCount(newCount);
         }
-    }, items);
-    const addItem = () => {
-        setCartItem(addToCart(product, items, 1));
-    };
-    const removeItem = () => {
-        if (count > 1) {
-            setCartItem(addToCart(product, items, -1));
-        }
-    };
+    }, [items]);
     return (
         <div className={classes.container}>
-            <button className={classes.button} onClick={removeItem}>
+            <button
+                className={classes.button}
+                onClick={() => {
+                    if (count > 1) {
+                        setCartItem(addToCart(product, items, -1));
+                    }
+                }}
+            >
                 -
             </button>
             <span className={classes.count}>{count}</span>
-            <button className={classes.button} onClick={addItem}>
+            <button
+                className={classes.button}
+                onClick={() => {
+                    setCartItem(addToCart(product, items, 1));
+                }}
+            >
                 +
             </button>
         </div>

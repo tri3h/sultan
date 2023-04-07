@@ -8,7 +8,7 @@ const FilterType: FC = () => {
     const { care_types } = useTypedSelector((state) => state.product);
     const { care_type_checkboxes } = useTypedSelector((state) => state.filter);
     const { setCareTypeCheckboxes } = useActions();
-    const onCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const changeCareType = (event: React.ChangeEvent<HTMLInputElement>) => {
         const name = event.currentTarget.name;
         if (event.currentTarget.checked) {
             setCareTypeCheckboxes([...care_type_checkboxes, name]);
@@ -21,7 +21,7 @@ const FilterType: FC = () => {
     return (
         <div className={classes.container}>
             <p className={classes.title}>Тип ухода</p>
-            <CheckboxList items={care_types} onChange={onCheckboxChange} />
+            <CheckboxList items={care_types} onChange={changeCareType} />
         </div>
     );
 };

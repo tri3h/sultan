@@ -15,7 +15,6 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
 }) => {
     const types = getTypesFromStorage();
     const products = getProductsFromStorage();
-    const error = <CustomError message={"Все поля должны быть заполнены"} />;
     const [isError, setIsError] = useState(false);
     const [values, setValues]: [
         Product,
@@ -24,8 +23,7 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
     useEffect(() => {
         setValues(defaultValues);
     }, [defaultValues]);
-
-    const onChangeInput = (
+    const onInputChange = (
         event:
             | React.ChangeEvent<HTMLInputElement>
             | React.ChangeEvent<HTMLTextAreaElement>
@@ -36,7 +34,6 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
     const onCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         let types;
         let temp = values.care_type === "" ? [] : values.care_type.split(", ");
-
         if (event.currentTarget.checked) {
             temp.push(event.currentTarget.value);
         } else {
@@ -45,7 +42,6 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
         types = temp.join(", ");
         setValues({ ...values, care_type: types });
     };
-
     const validate = () => {
         for (let entry of Object.entries(values)) {
             if (!entry[1]) {
@@ -55,13 +51,12 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
         }
         setIsError(false);
     };
-    const saveChanges = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const saveChanges = () => {
         validate();
         if (!isError) {
             save(values);
         }
     };
-
     const picOptions = products.map((product) => (
         <option
             key={product.barcode}
@@ -101,12 +96,12 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
                 placeholder="Название"
                 name="name"
                 defaultValue={defaultValues.name}
-                onChange={onChangeInput}
+                onChange={onInputChange}
             />
             <select
                 className={classes.input}
                 name="type"
-                onChange={onChangeInput}
+                onChange={onInputChange}
             >
                 {typeOptions}
             </select>
@@ -114,7 +109,7 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
                 className={classes.input}
                 placeholder="Размер"
                 name="size"
-                onChange={onChangeInput}
+                onChange={onInputChange}
                 defaultValue={defaultValues.size}
             />
             <input
@@ -122,21 +117,21 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
                 className={classes.input}
                 placeholder="Штрихкод"
                 name="barcode"
-                onChange={onChangeInput}
+                onChange={onInputChange}
                 defaultValue={defaultValues.barcode}
             />
             <input
                 className={classes.input}
                 placeholder="Производитель"
                 name="producer"
-                onChange={onChangeInput}
+                onChange={onInputChange}
                 defaultValue={defaultValues.producer}
             />
             <input
                 className={classes.input}
                 placeholder="Бренд"
                 name="brand"
-                onChange={onChangeInput}
+                onChange={onInputChange}
                 defaultValue={defaultValues.brand}
             />
             <textarea
@@ -144,7 +139,7 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
                 name="description"
                 placeholder="Описание"
                 rows={10}
-                onChange={onChangeInput}
+                onChange={onInputChange}
                 defaultValue={defaultValues.description}
             ></textarea>
             <input
@@ -152,13 +147,13 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
                 type="number"
                 placeholder="Цена"
                 name="price"
-                onChange={onChangeInput}
+                onChange={onInputChange}
                 defaultValue={defaultValues.price}
             />
             <select
                 className={classes.input}
                 name="pic"
-                onChange={onChangeInput}
+                onChange={onInputChange}
             >
                 {picOptions}
             </select>
@@ -172,7 +167,9 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
             >
                 Сохранить
             </button>
-            {isError ? error : null}
+            {isError ? (
+                <CustomError message={"Все поля должны быть заполнены"} />
+            ) : null}
         </form>
     );
 };

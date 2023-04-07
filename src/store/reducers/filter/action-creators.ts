@@ -6,6 +6,10 @@ export const FilterActionCreators = {
         type: FilterActionEnum.SET_FILTERED_PRODUCTS,
         payload: products,
     }),
+    setSortedProducts: (products: Product[]): FilterAction => ({
+        type: FilterActionEnum.SET_SORTED_PRODUCTS,
+        payload: products,
+    }),
     setProductPage: (page: number): FilterAction => ({
         type: FilterActionEnum.SET_PRODUCT_PAGE,
         payload: page,

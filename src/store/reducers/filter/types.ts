@@ -2,6 +2,7 @@ import { Product } from "../../../types/types";
 
 export interface FilterState {
     filtered_products: Product[];
+    sorted_products: Product[];
     producer_search: string;
     producer_checkboxes: string[];
     care_type_checkboxes: string[];
@@ -13,6 +14,7 @@ export interface FilterState {
 
 export enum FilterActionEnum {
     SET_FILTERED_PRODUCTS = "SET_FILTERED_PRODUCTS",
+    SET_SORTED_PRODUCTS = "SET_SORTED_PRODUCTS",
     SET_PRODUCT_PAGE = "SET_PRODUCT_PAGE",
     SET_PRODUCER_SEARCH = "SET_PRODUCER_SEARCH",
     SET_PRODUCER_CHECKBOXES = "SET_PRODUCER_CHECKBOXES",
@@ -46,6 +48,11 @@ interface SetProducerSearchAction {
     payload: string;
 }
 
+interface SetSortedProductsAction {
+    type: FilterActionEnum.SET_SORTED_PRODUCTS;
+    payload: Product[];
+}
+
 interface SetFilteredProductsAction {
     type: FilterActionEnum.SET_FILTERED_PRODUCTS;
     payload: Product[];
@@ -59,6 +66,7 @@ interface SetProductPageAction {
 export type FilterAction =
     | SetProductPageAction
     | SetFilteredProductsAction
+    | SetSortedProductsAction
     | SetProducerCheckboxesAction
     | SetProducerSearchAction
     | SetCareTypeCheckboxesAction

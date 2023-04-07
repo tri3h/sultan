@@ -9,7 +9,7 @@ interface CheckboxListProps {
 
 const CheckboxList: FC<CheckboxListProps> = ({ items, onChange }) => {
     const { care_type_checkboxes } = useTypedSelector((state) => state.filter);
-    const lis = items.map((item, index) => {
+    const lis = items.map((item) => {
         let isChecked = care_type_checkboxes.includes(item) ? true : false;
         return (
             <li key={item} className={classes.item}>
