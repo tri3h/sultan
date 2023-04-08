@@ -30,7 +30,11 @@ const Cart: FC = () => {
         setPrice(getTotalPrice());
     }, [items]);
     return (
-        <div className={classes.container} onClick={toCartPage}>
+        <div
+            className={classes.container}
+            onClick={toCartPage}
+            data-testid="cart-icon-container"
+        >
             <div className={classes["pic-container"]}>
                 <span className={classes.counter}>{count}</span>
                 <img src={cartIcon} alt="cart" />

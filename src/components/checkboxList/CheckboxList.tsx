@@ -20,6 +20,7 @@ const CheckboxList: FC<CheckboxListProps> = ({ items, onChange }) => {
                         name={item}
                         checked={isChecked}
                         onChange={onChange && ((event) => onChange(event))}
+                        data-testid="checkbox-input"
                     />
                     {item}
                 </label>

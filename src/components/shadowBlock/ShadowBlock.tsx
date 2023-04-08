@@ -30,6 +30,7 @@ const ShadowBlock: FC<ShadowBlockProps> = ({ name }) => {
                     : classes.container
             }
             onClick={onClick}
+            data-testid="block-item"
         >
             <p className={classes.text}>{name}</p>
         </div>

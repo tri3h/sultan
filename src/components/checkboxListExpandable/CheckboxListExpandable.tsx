@@ -42,6 +42,7 @@ const CheckboxListExpandable: FC<CheckboxListExpandableProps> = ({
                     onClick={() => {
                         setIsShowAll(true);
                     }}
+                    data-testid="checkbox-list-expand"
                 >
                     Показать все
                 </span>

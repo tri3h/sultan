@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 
 const DesktopHeader: FC = () => {
     return (
-        <header className={classes.header}>
+        <header data-testid="header" className={classes.header}>
             <div className={classes.top}>
                 <div className={classes["contacts-container"]}>
                     <Contacts
@@ -68,7 +68,7 @@ const DesktopHeader: FC = () => {
                     icon={{ src: downloadIcon, alt: "download" }}
                     isSmall={false}
                 />
-                <Cart></Cart>
+                <Cart />
             </div>
         </header>
     );

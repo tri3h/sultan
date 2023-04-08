@@ -42,6 +42,7 @@ const Counter: FC<CounterProps> = ({ product }) => {
                 onClick={() => {
                     setCartItem(addToCart(product, items, 1));
                 }}
+                data-testid="btn-add"
             >
                 +
             </button>

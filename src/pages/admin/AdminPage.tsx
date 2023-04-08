@@ -29,7 +29,7 @@ const AdminPage: FC = () => {
         </option>
     ));
     const careTypesOptions = types.map((type) => (
-        <option key={type} value={type}>
+        <option key={type} value={type} data-testid="admin-care-type-option">
             {type}
         </option>
     ));
@@ -120,8 +120,10 @@ const AdminPage: FC = () => {
                     <select
                         className={classes.select}
                         onChange={changeCareType}
+                        defaultValue={"DEFAULT"}
+                        data-testid="admin-care-type-select"
                     >
-                        <option disabled selected hidden></option>
+                        <option disabled value={"DEFAULT"} hidden></option>
                         {careTypesOptions}
                     </select>
                     <input
@@ -132,6 +134,7 @@ const AdminPage: FC = () => {
                         ) => {
                             setCareTypeChanged(event.currentTarget.value);
                         }}
+                        data-testid="admin-care-type-input"
                     ></input>
                     <button className={classes.button} onClick={saveCareType}>
                         Сохранить
@@ -150,8 +153,9 @@ const AdminPage: FC = () => {
                             classes["edit-select"],
                         ].join(" ")}
                         onChange={chooseEditProduct}
+                        defaultValue={"DEFAULT"}
                     >
-                        <option disabled selected hidden></option>
+                        <option disabled value={"DEFAULT"} hidden></option>
                         {productOptions}
                     </select>
                     <AdminProductCard

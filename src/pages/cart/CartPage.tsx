@@ -47,7 +47,7 @@ const CartPage: FC = () => {
     return (
         <>
             <Header />
-            <main className={classes.main}>
+            <main data-testid="cart-page-main" className={classes.main}>
                 <Breadcrumbs links={breadcrumbs} />
                 <h1 className={classes.title}>Корзина</h1>
                 {items.length === 0 ? noItems : itemsList}

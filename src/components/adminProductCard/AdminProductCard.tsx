@@ -58,11 +58,7 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
         }
     };
     const picOptions = products.map((product) => (
-        <option
-            key={product.barcode}
-            value={product.pic}
-            selected={product.pic === defaultValues.pic}
-        >
+        <option key={product.barcode} value={product.pic}>
             {product.pic}
         </option>
     ));
@@ -80,11 +76,7 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
     });
     const typeOptions = Object.values(ProductSizeTypes).map((type) => {
         return (
-            <option
-                key={type}
-                value={type}
-                selected={type === defaultValues.type}
-            >
+            <option key={type} value={type}>
                 {type}
             </option>
         );
@@ -164,6 +156,7 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
                 className={classes.button}
                 onClick={saveChanges}
                 type="button"
+                data-testid="admin-save-btn"
             >
                 Сохранить
             </button>

@@ -86,7 +86,7 @@ const CatalogPage: FC = () => {
     return (
         <>
             <Header />
-            <main className={classes.main}>
+            <main className={classes.main} data-testid="catalog-page-main">
                 <Breadcrumbs links={breadcrumbs} />
                 <div className={classes.top}>
                     <h1 className={classes.title}>Косметика и гигиена</h1>
