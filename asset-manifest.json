@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sultan/static/css/main.c6371495.css",
-    "main.js": "/sultan/static/js/main.dcff3007.js",
+    "main.css": "/sultan/static/css/main.3dfb6026.css",
+    "main.js": "/sultan/static/js/main.18a491f7.js",
     "static/media/organic-zone_nourishing-mask.png": "/sultan/static/media/organic-zone_nourishing-mask.2961c8ebb5d9ad0e1877.png",
     "static/media/biomio_soap.png": "/sultan/static/media/biomio_soap.aa7e831e6a4ff6804990.png",
     "static/media/persil_deep-clean-plus.jpeg": "/sultan/static/media/persil_deep-clean-plus.d42714b6ac299b4627be.jpeg",
@@ -63,11 +63,11 @@
     "static/media/arrow-right.svg": "/sultan/static/media/arrow-right.93ba4abe5846a231d455ec0417dd0a4b.svg",
     "static/media/sorting-arrow-down.svg": "/sultan/static/media/sorting-arrow-down.260e242d67fc23d29ab0.svg",
     "static/media/sorting-arrow-up.svg": "/sultan/static/media/sorting-arrow-up.5e5d30daddeae7614a94f9346edb1e23.svg",
-    "main.c6371495.css.map": "/sultan/static/css/main.c6371495.css.map",
-    "main.dcff3007.js.map": "/sultan/static/js/main.dcff3007.js.map"
+    "main.3dfb6026.css.map": "/sultan/static/css/main.3dfb6026.css.map",
+    "main.18a491f7.js.map": "/sultan/static/js/main.18a491f7.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6371495.css",
-    "static/js/main.dcff3007.js"
+    "static/css/main.3dfb6026.css",
+    "static/js/main.18a491f7.js"
   ]
 }
