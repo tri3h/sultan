@@ -3,10 +3,10 @@ import classes from "./AdminPage.module.sass";
 import AdminProductCard from "../../components/adminProductCard/AdminProductCard";
 import { LOCAL_STORAGE_DATA, Product } from "../../types/types";
 import { getProductsFromStorage, getTypesFromStorage } from "../../utils/utils";
+import AdminEditType from "../../components/adminEditType/AdminEditType";
 
 const AdminPage: FC = () => {
     const products = getProductsFromStorage();
-    const types = getTypesFromStorage();
     const addingDefaultValues = {
         name: "",
         size: "",
@@ -19,18 +19,13 @@ const AdminPage: FC = () => {
         care_type: "",
         pic: products[0].pic,
     };
+    const storageTypes = getTypesFromStorage();
+    const [careTypes, setCareTypes] = useState(storageTypes);
     const [editingDefaultValues, setEditingDefaultValues] =
         useState(addingDefaultValues);
-    const [careTypeSelected, setCareTypeSelected] = useState("");
-    const [careTypeChanged, setCareTypeChanged] = useState("");
     const productOptions = products.map((product) => (
         <option key={product.barcode} value={product.barcode}>
             {product.name}
-        </option>
-    ));
-    const careTypesOptions = types.map((type) => (
-        <option key={type} value={type} data-testid="admin-care-type-option">
-            {type}
         </option>
     ));
     const deleteProduct = () => {
@@ -62,21 +57,18 @@ const AdminPage: FC = () => {
             });
         }
     };
-    const changeCareType = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setCareTypeSelected(event.currentTarget.value);
-        setCareTypeChanged(event.currentTarget.value);
-    };
-    const saveCareType = () => {
-        let newTypes = types.filter((type) => type !== careTypeSelected);
-        newTypes.push(careTypeChanged);
+    const saveCareTypes = (
+        newTypes: string[],
+        optionSelected: string,
+        optionChanged: string
+    ) => {
         let newProducts = products.map((product) => {
-            let changedTypes = product.care_type.split(", ");
-            changedTypes = changedTypes.filter(
-                (type) => type !== careTypeSelected
-            );
-            changedTypes.push(careTypeChanged);
-            let result = changedTypes.join(", ");
-            return { ...product, care_type: result };
+            let newTypes = product.care_type.split(", ");
+            const index = newTypes.findIndex((type) => type === optionSelected);
+            if (index !== -1) {
+                newTypes[index] = optionChanged;
+            }
+            return { ...product, care_type: newTypes.join(", ") };
         });
         localStorage.setItem(
             LOCAL_STORAGE_DATA.CARE_TYPES,
@@ -86,6 +78,7 @@ const AdminPage: FC = () => {
             LOCAL_STORAGE_DATA.PRODUCTS,
             JSON.stringify(newProducts)
         );
+        setCareTypes(newTypes);
     };
     const addNewProduct = (product: Product) => {
         products.push(product);
@@ -116,30 +109,10 @@ const AdminPage: FC = () => {
                 <p className={classes.text}>
                     Выберите тип ухода для редактирования:
                 </p>
-                <div className={classes["care-type"]}>
-                    <select
-                        className={classes.select}
-                        onChange={changeCareType}
-                        defaultValue={"DEFAULT"}
-                        data-testid="admin-care-type-select"
-                    >
-                        <option disabled value={"DEFAULT"} hidden></option>
-                        {careTypesOptions}
-                    </select>
-                    <input
-                        className={classes.select}
-                        value={careTypeChanged}
-                        onChange={(
-                            event: React.ChangeEvent<HTMLInputElement>
-                        ) => {
-                            setCareTypeChanged(event.currentTarget.value);
-                        }}
-                        data-testid="admin-care-type-input"
-                    ></input>
-                    <button className={classes.button} onClick={saveCareType}>
-                        Сохранить
-                    </button>
-                </div>
+                <AdminEditType
+                    defaultTypes={careTypes}
+                    saveTypes={saveCareTypes}
+                />
             </div>
             <div>
                 <h1 className={classes.title}>Редактирование товаров</h1>

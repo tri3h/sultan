@@ -144,12 +144,12 @@ describe("tests", () => {
                 </MemoryRouter>
             </Provider>
         );
-        const select = screen.getByTestId("admin-care-type-select");
-        const option = screen.getAllByTestId("admin-care-type-option")[1];
+        const select = screen.getByTestId("admin-type-select");
+        const option = screen.getAllByTestId("admin-type-option")[1];
         await act(async () => {
             userEvent.selectOptions(select, option.value);
         });
-        const input = screen.getByTestId("admin-care-type-input");
+        const input = screen.getByTestId("admin-type-input");
         expect(option.value).toBe(input.value);
     });
 });

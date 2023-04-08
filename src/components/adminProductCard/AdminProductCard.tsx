@@ -13,9 +13,10 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
     defaultValues,
     save,
 }) => {
-    const types = getTypesFromStorage();
+    const careTypes = getTypesFromStorage();
     const products = getProductsFromStorage();
     const [isError, setIsError] = useState(false);
+    const [isSaved, setIsSaved] = useState(false);
     const [values, setValues]: [
         Product,
         React.Dispatch<React.SetStateAction<Product>>
@@ -32,29 +33,30 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
         setValues({ ...values, [event.target.name]: event.target.value });
     };
     const onCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        let types;
-        let temp = values.care_type === "" ? [] : values.care_type.split(", ");
+        let types = values.care_type === "" ? [] : values.care_type.split(", ");
         if (event.currentTarget.checked) {
-            temp.push(event.currentTarget.value);
+            types.push(event.currentTarget.value);
         } else {
-            temp = temp.filter((type) => type !== event.currentTarget.value);
+            types = types.filter((type) => type !== event.currentTarget.value);
         }
-        types = temp.join(", ");
-        setValues({ ...values, care_type: types });
+        setValues({ ...values, care_type: types.join(", ") });
     };
-    const validate = () => {
+    const validate = (): boolean => {
         for (let entry of Object.entries(values)) {
             if (!entry[1]) {
                 setIsError(true);
-                return;
+                return false;
             }
         }
         setIsError(false);
+        return true;
     };
     const saveChanges = () => {
-        validate();
-        if (!isError) {
+        const isValidated = validate();
+        if (isValidated) {
             save(values);
+            setIsSaved(true);
+            setTimeout(() => setIsSaved(false), 1500);
         }
     };
     const picOptions = products.map((product) => (
@@ -62,7 +64,7 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
             {product.pic}
         </option>
     ));
-    const careInputs = types.map((type: string, index) => {
+    const careInputs = careTypes.map((type: string, index) => {
         return (
             <label key={index} className={classes["checkbox-label"]}>
                 <input
@@ -163,6 +165,7 @@ const AdminProductCard: FC<AdminProductCardProps> = ({
             {isError ? (
                 <CustomError message={"Все поля должны быть заполнены"} />
             ) : null}
+            {isSaved ? <div>Сохранено</div> : null}
         </form>
     );
 };

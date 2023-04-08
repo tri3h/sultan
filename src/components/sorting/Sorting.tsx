@@ -7,7 +7,7 @@ import { Product } from "../../types/types";
 
 const Sorting: FC = () => {
     const { filtered_products } = useTypedSelector((state) => state.filter);
-    const { setSortedProducts } = useActions();
+    const { setSortedProducts, setProductPage } = useActions();
     const options = [
         { name: "По возрастанию названия", value: "name_increase" },
         { name: "По убыванию названия", value: "name_decrease" },
@@ -62,6 +62,7 @@ const Sorting: FC = () => {
                 break;
         }
         setSortedProducts(sortedProducts);
+        setProductPage(1);
     };
     useEffect(() => {
         sortProducts();
